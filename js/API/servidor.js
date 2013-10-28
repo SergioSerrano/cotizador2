@@ -296,3 +296,39 @@ function llena_tabla(objc, obj) {
 	objc.parents('tr').children('.p_unit').children('#lab').remove();
 	$('<label style="text-align:right" data-theme="b" id="lab">$' + valor.format() + '</label>').appendTo(objc.parents('tr').children('.p_unit'));
 }
+
+function exporta() {
+     
+	/*var doc = new jsPDF();
+
+						// We'll make our own renderer to skip this editor
+
+						doc.text(20, 20, 'PDF Generation using client-side Javascript');
+						doc.fromHTML($('body'), 15, 15, {
+							'width': 170
+						});
+
+						doc.addPage();
+						doc.text(20, 20, 'Do you like that?');
+						doc.save();
+						return doc.output();*/
+
+
+	var doc = new jsPDF();
+
+	// We'll make our own renderer to skip this editor
+	var specialElementHandlers = {
+		'#form1': function (element, renderer) {
+			return true;
+		}
+	};
+
+	// All units are in the set measurement for the document
+	// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+	doc.fromHTML($('#form1').get(0), 15, 15, {
+		'width': 170,
+		'elementHandlers': specialElementHandlers
+	});
+	doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
+
+}

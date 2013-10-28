@@ -81,6 +81,7 @@ $(document).ready(function (e) {
 		//---------------guarda encuesta
 		$('#guarda').tap(function () {
 			alert("entre");
+			exporta();
 		});
 		
 		var info = {
