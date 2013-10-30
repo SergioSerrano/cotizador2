@@ -3,6 +3,7 @@
 	<name>Cotizador_Victorinox</name>
 	<description>Cotizador Victorinox</description>
 	<author email="pepes17@hotmail.com">Sergio Serrano</author>
+	<preference name="phonegap-version" value="3.0.0" />
 	<feature name="http://api.phonegap.com/1.0/camera" />
 	<feature name="http://api.phonegap.com/1.0/contacts" />
 	<feature name="http://api.phonegap.com/1.0/file" />
