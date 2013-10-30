@@ -25,10 +25,8 @@
 		<script type="text/javascript" src="js/API/libs/FileSaver.js/FileSaver.js"></script>
 		<script type="text/javascript" src="js/API/libs/Blob.js/Blob.js"></script>
 		<script type="text/javascript" src="js/API/libs/Blob.js/BlobBuilder.js"></script>
-
 		<script type="text/javascript" src="js/API/libs/Deflate/deflate.js"></script>
 		<script type="text/javascript" src="js/API/ibs/Deflate/adler32cs.js"></script>
-
 		<script type="text/javascript" src="js/API/jspdf.plugin.addimage.js"></script>
 		<script type="text/javascript" src="js/API/jspdf.plugin.from_html.js"></script>
 		<script type="text/javascript" src="js/API/jspdf.plugin.ie_below_9_shim.js"></script>
@@ -111,7 +109,7 @@
 			
 		</style>
 	</head>
-	<body >
+	<body>
 		<!-- pagina principal -->
 		<div data-role="page" id="form1" data-theme="b">
 			<div data-role="header" data_theme="a">
@@ -469,7 +467,7 @@ font-weight:bold;
 				var f = new Date();
 				document.getElementById('descripcion').innerHTML = "Puebla Pue, a:  " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear();
 
-				
+
 
 			});
 			 // ]]&gt;
@@ -479,40 +477,7 @@ font-weight:bold;
 				return this.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
 			};
 		</script>
-		
 		<script type="text/javascript" charset="utf-8" src="css-js/phonegap-1.0.0.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-		alert("onDeviceReady");
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-
-    }
-
-    function gotFS(fileSystem) {
-        var path = "readme.txt";
-		alert("gotFS");
-        fileSystem.root.getFile(path, {create: true, exclusive: false}, gotFileEntry, fail);
-
-    }
-
-    function gotFileEntry(fileEntry) {
-		alert("gotFileEntry");
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
-
-    function gotFileWriter(writer) {
-        writer.onwrite = function(evt) {
-            alert("write success");
-        };
-        writer.write("some sample text");
-</script>
 	
 	</body>
 	<!--pepes17@gmail.com -Sergio Serrano-->
