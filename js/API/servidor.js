@@ -337,24 +337,3 @@ function exporta() {
 }
 
 
-function gotFS(fileSystem) {
-				var path = "readme.txt";
-				alert("gotFS");
-				fileSystem.root.getFile(path, {
-					create: true,
-					exclusive: false
-				}, gotFileEntry, fail);
-
-			}
-
-			function gotFileEntry(fileEntry) {
-				alert("gotFileEntry");
-				fileEntry.createWriter(gotFileWriter, fail);
-			}
-
-			function gotFileWriter(writer) {
-				writer.onwrite = function(evt) {
-					alert("write success");
-				};
-				writer.write("some sample text");
-			}
