@@ -329,6 +329,9 @@ function exporta() {
 		'width': 170,
 		'elementHandlers': specialElementHandlers
 	});
-	doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
+	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
+	alert('guardando');
+	navigator.file.write('Documento.txt', 'doc',
+            fail, fail);
 
 }
