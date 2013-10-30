@@ -335,5 +335,6 @@ function exporta() {
             fail, fail);
 
 }
+Function fail(){alert("error al guardar");}
 
 
