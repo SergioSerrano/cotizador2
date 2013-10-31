@@ -4,7 +4,7 @@ var index = 0;
 $(document).ready(function (e) {
 	document.addEventListener("deviceready", function () {
 
-
+ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 	
 		window.location.href = '#form1';
 		var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");

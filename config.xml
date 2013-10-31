@@ -20,7 +20,11 @@
 	<gap:splash src="css/images/emoticones_excelente.png" />
 	<gap:plugin name="org.apache.cordova.file" />
 	<gap:plugin name="org.apache.cordova.file-transfer" />
-	
+	<feature name="File">
+		<param name="ios-package" value="CDVFile" />
+	</feature>
+	<feature name="FileTransfer">
+		<param name="ios-package" value="CDVFileTransfer" />
+	</feature>
 	<access origin="*" subdomains="true" />
-	
 </widget>
