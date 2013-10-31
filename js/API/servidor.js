@@ -337,17 +337,17 @@ function exporta() {
 
 }
 function gotFS(fileSystem) {
-	alert("entro a gotfs");
+	alert(fileSystem);
         fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
-	    alert("entro a gotFileEntry");
+	    alert(fileEntry);
         fileEntry.createWriter(gotFileWriter, fail);
     }
 
     function gotFileWriter(writer) {
-	    alert("entro a gotFileWriter");
+	    alert(writer);
         writer.onwriteend = function(evt) {
            alert("contents of file now 'some sample text'");
             writer.truncate(11);
