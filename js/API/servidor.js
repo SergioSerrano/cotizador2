@@ -337,23 +337,26 @@ function exporta() {
 
 }
 function gotFS(fileSystem) {
+	alert("entro a gotfs");
         fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
+	    alert("entro a gotFileEntry");
         fileEntry.createWriter(gotFileWriter, fail);
     }
 
     function gotFileWriter(writer) {
+	    alert("entro a gotFileWriter");
         writer.onwriteend = function(evt) {
-            console.log("contents of file now 'some sample text'");
+           alert("contents of file now 'some sample text'");
             writer.truncate(11);
             writer.onwriteend = function(evt) {
-                console.log("contents of file now 'some sample'");
+                alert("contents of file now 'some sample'");
                 writer.seek(4);
                 writer.write(" different text");
                 writer.onwriteend = function(evt){
-                    console.log("contents of file now 'some different text'");
+                   alert("contents of file now 'some different text'");
                 }
             };
         };
@@ -361,7 +364,7 @@ function gotFS(fileSystem) {
     }
 
     function fail(error) {
-        console.log(error.code);
+        alert(error.code);
     }
 
 
