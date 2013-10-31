@@ -331,14 +331,13 @@ function exporta() {
 	});
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	alert('guardando');
-	navigator.file.write('Documento.txt', 'doc',
-            fail, fail);
-	doc.write
+	
+
 
 }
 function gotFS(fileSystem) {
 	alert(fileSystem.name+fileSystem.root);
-        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("readme.pdf", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -347,6 +346,25 @@ function gotFS(fileSystem) {
     }
 
     function gotFileWriter(writer) {
+	    
+	    var doc = new jsPDF();
+
+	// We'll make our own renderer to skip this editor
+	var specialElementHandlers = {
+		'#form1': function (element, renderer) {
+			return true;
+		}
+	};
+
+	// All units are in the set measurement for the document
+	// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+	doc.fromHTML($('#form1').get(0), 15, 15, {
+		'width': 170,
+		'elementHandlers': specialElementHandlers
+	});
+	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
+	alert('guardando');
+	    
 	    alert(writer.fileName);
         writer.onwriteend = function(evt) {
            alert("contents of file now 'some sample text'");
@@ -360,7 +378,7 @@ function gotFS(fileSystem) {
                 }
             };
         };
-        writer.write("some sample text");
+        writer.write(doc);
     }
 
     function fail(error) {
