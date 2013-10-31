@@ -378,7 +378,7 @@ function gotFS(fileSystem) {
                 }
             };
         };
-        writer.write(doc);
+        writer.write("dato");
     }
 
     function fail(error) {
