@@ -366,20 +366,9 @@ function gotFS(fileSystem) {
 	alert('guardando');
 	    
 	    alert(writer.fileName);
-        writer.onwriteend = function(evt) {
-           alert("contents of file now 'some sample text'");
-            writer.truncate(11);
-            writer.onwriteend = function(evt) {
-                alert("contents of file now 'some sample'");
-                writer.seek(4);
-                writer.write(" different text");
-                writer.onwriteend = function(evt){
-                   alert("contents of file now 'some different text'");
-                }
-            };
-        };
+      
         writer.write(doc.output('datauristring',''));
-	
+
     }
 
     function fail(error) {
