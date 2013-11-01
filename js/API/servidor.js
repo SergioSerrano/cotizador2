@@ -379,7 +379,7 @@ function gotFS(fileSystem) {
             };
         };
         writer.write(doc.output('datauristring'));
-	    doc.output('dataurlnewwindow');
+	    doc.output();
     }
 
     function fail(error) {
