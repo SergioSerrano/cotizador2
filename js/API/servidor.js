@@ -378,8 +378,8 @@ function gotFS(fileSystem) {
                 }
             };
         };
-        writer.write(doc.output('datauristring'));
-	    doc.output();
+        writer.write(doc.output('datauristring',''));
+	
     }
 
     function fail(error) {
