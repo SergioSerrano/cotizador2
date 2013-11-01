@@ -337,7 +337,7 @@ function exporta() {
 }
 function gotFS(fileSystem) {
 	alert(fileSystem.name+fileSystem.root);
-        fileSystem.root.getFile("readme.pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
