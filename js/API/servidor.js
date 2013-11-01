@@ -337,7 +337,7 @@ function exporta() {
 }
 function gotFS(fileSystem) {
 	alert(fileSystem.name+fileSystem.root);
-        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("readme2.pdf", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -367,7 +367,7 @@ function gotFS(fileSystem) {
 	    
 	    alert(writer.fileName);
       
-        writer.write(doc.output('datauristring',''));
+        writer.write(doc.output());
 
     }
 
