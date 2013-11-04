@@ -312,32 +312,18 @@ function exporta() {
 						doc.text(20, 20, 'Do you like that?');
 						doc.save();
 						return doc.output();*/
+	
+	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
 
-	var doc = new jsPDF();
-
-	// We'll make our own renderer to skip this editor
-	var specialElementHandlers = {
-		'#form1': function (element, renderer) {
-			return true;
-		}
-	};
-
-	// All units are in the set measurement for the document
-	// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-	doc.fromHTML($('#form1').get(0), 15, 15, {
-		'width': 170,
-		'elementHandlers': specialElementHandlers
-	});
-	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
-	alert('guardando');
+	
 	
 
 
 }
 function gotFS(fileSystem) {
 	alert(fileSystem.name+fileSystem.root);
-        fileSystem.root.getFile("readme2.pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("readme2"+$('No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
