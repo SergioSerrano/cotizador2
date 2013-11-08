@@ -328,7 +328,7 @@ function gotFS(fileSystem) {
 
     function gotFileEntry(fileEntry) {
 	    alert(fileEntry.fullPath);
-	    fileEntry.fullPath="/var/mobile/Applications/BA7463B6-7EB0-42A4-BF3E-DD7867D4B924/Documents/readme212.pdf";
+	    fileEntry.fullPath="/var/mobile/Applications/com.adobe.Adobe-Reader/Documents/readme212.pdf";
 	    
 	    alert(fileEntry.fullPath);
         fileEntry.createWriter(gotFileWriter, fail);
