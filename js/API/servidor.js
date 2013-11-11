@@ -327,10 +327,7 @@ function gotFS(fileSystem) {
     }
 
     function gotFileEntry(fileEntry) {
-	    alert(fileEntry.fullPath);
-	    fileEntry.fullPath="/var/mobile/Applications/com.adobe.Adobe-Reader/Documents/readme212.pdf";
-	    
-	    alert(fileEntry.fullPath);
+	   
         fileEntry.createWriter(gotFileWriter, fail);
     }
 
@@ -356,8 +353,10 @@ function gotFS(fileSystem) {
 	    
 	    alert(writer.fileName);
       
-        writer.write(doc.output());
-
+        	writer.write(doc.output());
+	    var dir=gotFileEntry;
+	    alert(dir);
+	    window.location.href=dir.fullpath;
     }
 
     function fail(error) {
