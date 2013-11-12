@@ -353,9 +353,9 @@ function gotFS(fileSystem) {
 
 	    
 	    alert(writer.fileName);
- 	    alert(filevar); 
+ 	    //alert(filevar); 
 	    writer.write(doc.output());
-	    var ref = window.open(filevar, '_system', 'location=yes');
+	  //  var ref = window.open(filevar, '_system', 'location=yes');
 	    var ref = window.open(writer.fileName, '_system', 'location=yes');
     }
 
