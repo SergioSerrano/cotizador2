@@ -355,7 +355,7 @@ function gotFS(fileSystem) {
 	    alert(writer.fileName);
  	    alert(filevar); 
 	    writer.write(doc.output());
-	    var ref = window.open(filevar, '_blank', 'location=yes');
+	    var ref = window.open(filevar, '_system', 'location=yes');
 	    var ref = window.open(writer.fileName, '_blank', 'location=yes');
     }
 
