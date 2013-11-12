@@ -324,7 +324,7 @@ function exporta() {
 var filevar="";
 function gotFS(fileSystem) {
 
-        fileSystem.root.getFile("readme2"+$('No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("readme2"+$('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -355,8 +355,8 @@ function gotFS(fileSystem) {
 	    alert(writer.fileName);
  	    alert(filevar); 
 	    writer.write(doc.output());
-	    window.location.href=filevar;
-	    window.location.href=writer.fileName;
+	    var ref = window.open(filevar, '_blank', 'location=yes');
+	    var ref = window.open(writer.fileName, '_blank', 'location=yes');
     }
 
     function fail(error) {
