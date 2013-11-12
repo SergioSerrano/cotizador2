@@ -322,13 +322,15 @@ function exporta() {
 
 }
 
+var filevar='';
+
 function gotFS(fileSystem) {
 
         fileSystem.root.getFile("readme2"+$('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
-	    
+	    filevar=fileEntry.fullpath;
         fileEntry.createWriter(gotFileWriter, fail);
     }
 
