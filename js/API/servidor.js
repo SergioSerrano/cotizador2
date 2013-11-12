@@ -321,14 +321,14 @@ function exporta() {
 
 
 }
-var filevar="";
+
 function gotFS(fileSystem) {
 
         fileSystem.root.getFile("readme2"+$('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
-	    filevar=fileEntry.fullpath;
+	    
         fileEntry.createWriter(gotFileWriter, fail);
     }
 
@@ -353,9 +353,9 @@ function gotFS(fileSystem) {
 
 	    
 	    alert(writer.fileName);
- 	    //alert(filevar); 
+ 	   alert(filevar); 
 	    writer.write(doc.output());
-	  //  var ref = window.open(filevar, '_system', 'location=yes');
+	   var ref = window.open(filevar, '_system');
 	    var ref = window.open(writer.fileName, '_system');
     }
 
