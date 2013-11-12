@@ -321,13 +321,14 @@ function exporta() {
 
 
 }
+var filevar="";
 function gotFS(fileSystem) {
-	alert(fileSystem.name+fileSystem.root);
+
         fileSystem.root.getFile("readme2"+$('No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
-	   
+	    filevar=fileEntry.fullpath;
         fileEntry.createWriter(gotFileWriter, fail);
     }
 
@@ -349,14 +350,13 @@ function gotFS(fileSystem) {
 		'elementHandlers': specialElementHandlers
 	});
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
-	alert('guardando');
+
 	    
 	    alert(writer.fileName);
-      
-        	writer.write(doc.output());
-	    var dir=gotFileEntry;
-	    alert(dir);
-	    window.location.href=dir.fullpath;
+ 	    alert(filevar); 
+	    writer.write(doc.output());
+	    window.location.href=filevar;
+	    window.location.href=writer.fileName;
     }
 
     function fail(error) {
