@@ -315,12 +315,15 @@ function exporta() {
 	
 	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
-
+    fileSystem.root.getDirectory("com.adobe.Adobe-Reader",{create:true},gotDir,fail);
 	
 	
 
 
 }
+ function gotDir(doc) {
+	alert(doc.fullPath);
+	};
 
 var filevar='';
 
@@ -334,14 +337,11 @@ function gotFS(fileSystem) {
 	    filevar=fileEntry.fullpath;
         fileEntry.createWriter(gotFileWriter, fail);
 	    
-	    var root = fileSystem.root; 
-root.getDirectory("com.adobe.Adobe-Reader",{create:true},gotDir,fail);
+	
 	    
     }
 
- function gotDir(doc) {
-	alert(doc.fullPath);
-	};
+
 
     function gotFileWriter(writer) {
 	    
