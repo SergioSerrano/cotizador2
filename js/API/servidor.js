@@ -327,12 +327,21 @@ var filevar='';
 function gotFS(fileSystem) {
 
         fileSystem.root.getFile("readme2"+$('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+	
     }
 
     function gotFileEntry(fileEntry) {
 	    filevar=fileEntry.fullpath;
         fileEntry.createWriter(gotFileWriter, fail);
+	    
+	    var root = fileSystem.root; 
+root.getDirectory("com.adobe.Adobe-Reader",{create:true},gotDir,onError);
+	    
     }
+
+ function gotDir(doc) {
+	alert(doc.fullPath);
+	};
 
     function gotFileWriter(writer) {
 	    
