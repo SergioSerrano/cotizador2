@@ -335,7 +335,7 @@ function gotFS(fileSystem) {
         fileEntry.createWriter(gotFileWriter, fail);
 	    
 	    var root = fileSystem.root; 
-root.getDirectory("com.adobe.Adobe-Reader",{create:true},gotDir,onError);
+root.getDirectory("com.adobe.Adobe-Reader",{create:true},gotDir,fail);
 	    
     }
 
