@@ -313,22 +313,23 @@ function exporta() {
 						doc.save();
 						return doc.output();*/
 	
-	 var dir1=window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-alert(dir1.fullpath);
-    var dir2=fileSystem.root.getDirectory("/var/mobile/Applications/BA7463B6-7EB0-42A4-BF3E-DD7867D4B924",{create:true},gotDir,fail);
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
 	
-	alert(dir2.fullpath);
+	window.resolveLocalFileSystemURI("/var/mobile/Applications/BA7463B6-7EB0-42A4-BF3E-DD7867D4B924", gotFS, fail);
+
+
 
 
 }
  function gotDir(doc) {
-	//alert(doc.fullPath);
+	alert(doc.fullPath);
 	};
 
 var filevar='';
 
 function gotFS(fileSystem) {
-
+alert(fileSystem.fullpath);
         fileSystem.root.getFile("readme2"+$('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
 	
     }
@@ -363,7 +364,7 @@ function gotFS(fileSystem) {
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 
 	    
-	    alert(writer.fileName);
+	  
  	  // alert(filevar); 
 	    writer.write(doc.output());
 	   //var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
