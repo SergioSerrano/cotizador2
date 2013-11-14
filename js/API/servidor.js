@@ -358,7 +358,7 @@ function gotFS(fileSystem) {
  	  // alert(filevar); 
 	    writer.write(doc.output());
 	   //var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
-	    var ref = window.open(writer.fileName, '_system','presentationstyle=pagesheet; toolbar=yes');
+	    var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet; toolbar=yes');
 	     if (!ref) {
             alert('window.open returned ' + ref);
             return;
