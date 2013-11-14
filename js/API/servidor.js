@@ -313,16 +313,16 @@ function exporta() {
 						doc.save();
 						return doc.output();*/
 	
-	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-
-    fileSystem.root.getDirectory("com.adobe.Adobe-Reader",{create:true},gotDir,fail);
+	 var dir1=window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+alert(dir1);
+    var dir2=fileSystem.root.getDirectory("com.adobe.Adobe-Reader",{create:true},gotDir,fail);
 	
-	
+	alert(dir2);
 
 
 }
  function gotDir(doc) {
-	alert(doc.fullPath);
+	//alert(doc.fullPath);
 	};
 
 var filevar='';
