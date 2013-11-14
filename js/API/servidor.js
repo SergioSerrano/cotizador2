@@ -314,10 +314,10 @@ function exporta() {
 						return doc.output();*/
 	
 	 var dir1=window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-alert(dir1);
+alert(dir1.fullpath);
     var dir2=fileSystem.root.getDirectory("/var/mobile/Applications/BA7463B6-7EB0-42A4-BF3E-DD7867D4B924",{create:true},gotDir,fail);
 	
-	alert(dir2);
+	alert(dir2.fullpath);
 
 
 }
