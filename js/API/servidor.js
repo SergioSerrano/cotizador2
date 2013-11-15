@@ -316,7 +316,7 @@ function exporta() {
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
 	
-	window.resolveLocalFileSystemURI("/var/mobile/Applications/com.adobe.Adobe-Reader", gotFS, fail);
+	window.resolveLocalFileSystemURI("com.adobe.Adobe-Reader", gotFS, fail);
 
 
 
