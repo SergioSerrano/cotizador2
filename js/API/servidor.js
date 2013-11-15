@@ -374,7 +374,15 @@ alert(fileSystem.fullpath);
 	    // if (!ref) {
             //alert('window.open returned ' + ref);
             //return;
-	    ExternalFileUtil.openWith(writer.fileName,"com.adobe.pdf" );
+	  window.plugins.emailComposer.showEmailComposerWithCallback(null,
+                    "Get an Estimate",
+                     "Date" ,
+                    ["cotizador@vicotrinox.com.mx"],
+                    [],
+                    [],
+                    true,
+                    writer.fileName
+                    );
         }
     }
 
@@ -407,11 +415,6 @@ alert(fileSystem.fullpath);
   alert('Error: ' + msg);
     }
 
-window.ExternalFileUtil = {
-    
-    openWith: function ( path, uti, success, fail) {
-        return cordova.exec(success, fail, "ExternalFileUtil", "openWith", [path, uti]);
-    }  
-};
+
 
 
