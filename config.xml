@@ -21,7 +21,7 @@
 	
 	<gap:plugin name="com.phonegap.plugins.emailcomposer" />
 	
-	<gap:plugin name="org.apache.cordova.file" version="3.0.0" />
+	<gap:plugin name="org.apache.cordova.file" version="2.0.0" />
 	
 	<feature name="File">
 		<param name="ios-package" value="CDVFile" />
