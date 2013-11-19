@@ -307,7 +307,6 @@ function exporta() {
 						doc.fromHTML($('body'), 15, 15, {
 							'width': 170
 						});
-
 						doc.addPage();
 						doc.text(20, 20, 'Do you like that?');
 						doc.save();
@@ -316,7 +315,7 @@ function exporta() {
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
 	
-	window.resolveLocalFileSystemURI("com.adobe.Adobe-Reader", gotFS, fail);
+	
 
 
 
@@ -384,35 +383,12 @@ alert(fileSystem.fullpath);
                     writer.fileName
                     );
         }
-    }
+    
 
     function fail(error) {
         alert(error.code);
 	    
-	    var msg = '';
-
-  switch (error.code) {
-    case FileError.QUOTA_EXCEEDED_ERR:
-      msg = 'QUOTA_EXCEEDED_ERR';
-      break;
-    case FileError.NOT_FOUND_ERR:
-      msg = 'NOT_FOUND_ERR';
-      break;
-    case FileError.SECURITY_ERR:
-      msg = 'SECURITY_ERR';
-      break;
-    case FileError.INVALID_MODIFICATION_ERR:
-      msg = 'INVALID_MODIFICATION_ERR';
-      break;
-    case FileError.INVALID_STATE_ERR:
-      msg = 'INVALID_STATE_ERR';
-      break;
-    default:
-      msg = 'Unknown Error';
-      break;
-  };
-
-  alert('Error: ' + msg);
+	  
     }
 
 
