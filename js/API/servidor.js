@@ -367,22 +367,14 @@ alert(fileSystem.fullpath);
  	  // alert(filevar); 
 	    writer.write(doc.output());
 	   //var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
-	 //   window.location.href=writer.fileName;
+	  window.location.href=writer.fileName;
+	    window.open(writer.fileName);
 	   // $('#pdffile').href=writer.fileName;
 	  //  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	    // if (!ref) {
             //alert('window.open returned ' + ref);
             //return;
-	  window.plugins.emailComposer.showEmailComposerWithCallback(null,
-                    "Get an Estimate",
-                     "Date" ,
-                    ["cotizador@vicotrinox.com.mx"],
-                    [],
-                    [],
-                    true,
-                    writer.fileName
-                    );
-        }
+	
     
 
     function fail(error) {
