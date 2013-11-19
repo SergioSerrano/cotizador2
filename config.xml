@@ -19,19 +19,12 @@
 	<gap:platform name="winphone" />
 	<gap:splash src="css/images/emoticones_excelente.png" />
 	
-	<gap:plugin name="com.phonegap.plugins.emailcomposer" />
 	
-	<gap:plugin name="org.apache.cordova.file" version="2.0.0" />
 	
-	<feature name="File">
-		<param name="ios-package" value="CDVFile" />
-	</feature>
-	<feature name="FileTransfer">
-		<param name="ios-package" value="CDVFileTransfer" />
-	</feature>
-	<feature name="InAppBrowser">
-                <param name="ios-package" value="CDVInAppBrowser" /> 
-            </feature>
+	<gap:plugin name="org.apache.cordova.file" />
+	<preference name="phonegap-version" value="3.0.0" />
+	
+	
 	
 	
 	<access origin="*" subdomains="true" />
