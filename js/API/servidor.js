@@ -375,7 +375,7 @@ alert(fileSystem.fullpath);
             //alert('window.open returned ' + ref);
             //return;
 	
-    
+    }
 
     function fail(error) {
         alert(error.code);
