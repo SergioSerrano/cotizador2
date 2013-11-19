@@ -83,7 +83,7 @@ $(document).ready(function (e) {
 			
 			exporta();
 			
-			
+				
 		});
 		
 		var info = {
