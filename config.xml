@@ -21,7 +21,7 @@
 	
 	<gap:plugin name="com.phonegap.plugins.emailcomposer" />
 	
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	
 	
 	<feature name="File">
 		<param name="ios-package" value="CDVFile" />
