@@ -299,20 +299,9 @@ function llena_tabla(objc, obj) {
 
 function exporta() {
      
-	/*var doc = new jsPDF();
-
-						// We'll make our own renderer to skip this editor
-
-						doc.text(20, 20, 'PDF Generation using client-side Javascript');
-						doc.fromHTML($('body'), 15, 15, {
-							'width': 170
-						});
-						doc.addPage();
-						doc.text(20, 20, 'Do you like that?');
-						doc.save();
-						return doc.output();*/
 	
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+	
+	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
 	
 	
@@ -321,20 +310,17 @@ function exporta() {
 
 
 }
- function gotDir(doc) {
-	alert(doc.fullPath);
-	};
 
-var filevar='';
+
 
 function gotFS(fileSystem) {
-alert(fileSystem.fullpath);
+
         fileSystem.root.getFile("readme2"+$('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
 	
     }
 
     function gotFileEntry(fileEntry) {
-	    filevar=fileEntry.fullpath;
+	    alert(fileEntry.fullpath);
         fileEntry.createWriter(gotFileWriter, fail);
 	    
 	
