@@ -80,10 +80,10 @@ $(document).ready(function (e) {
 		});
 		//---------------guarda encuesta
 		$('#guarda').tap(function () {
-			alert("entre");
+			
 			exporta();
 			
-			 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+			
 		});
 		
 		var info = {

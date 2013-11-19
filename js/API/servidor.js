@@ -302,6 +302,7 @@ function exporta() {
 	
 	
 	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+	
 
 	
 	
@@ -315,12 +316,12 @@ function exporta() {
 
 function gotFS(fileSystem) {
 
-        fileSystem.root.getFile("readme2"+$('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile($('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
 	
     }
 
     function gotFileEntry(fileEntry) {
-	    alert(fileEntry.fullpath);
+	   
         fileEntry.createWriter(gotFileWriter, fail);
 	    
 	
@@ -354,8 +355,9 @@ function gotFS(fileSystem) {
 	    writer.write(doc.output());
 	   //var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
 	//  window.location.href=writer.fileName;
-	    window.open(writer.fileName);
-	   // $('#pdffile').href=writer.fileName;
+	   // window.open(writer.fileName);
+	    alert(writer.fileName);
+	    $('#pdffile').href=writer.fileName;
 	  //  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	    // if (!ref) {
             //alert('window.open returned ' + ref);
