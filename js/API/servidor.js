@@ -357,7 +357,17 @@ function gotFS(fileSystem) {
 	//  window.location.href=writer.fileName;
 	   window.open(writer.fileName,'_system' );
 	    alert(writer.fileName);
-	    $('#pdffile').href=writer.fileName;
+	    
+	 ExternalFileUtil.openWith(
+     "http://www.tricedesigns.com/temp/drm.pdf",
+     "com.adobe.pdf" );
+	    
+	    
+	    
+	    ExternalFileUtil.openWith(
+     "http://www.tricedesigns.com/temp/drm.pdf",
+     "com.adobe.Adobe-Reader" );
+	    
 	  //  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	    // if (!ref) {
             //alert('window.open returned ' + ref);
