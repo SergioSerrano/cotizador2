@@ -359,13 +359,13 @@ function gotFS(fileSystem) {
 	    alert(writer.fileName);
 	    
 	 ExternalFileUtil.openWith(
-     "http://www.tricedesigns.com/temp/drm.pdf",
+     writer.fileName,
      "com.adobe.pdf" );
 	    
 	    
 	    
 	    ExternalFileUtil.openWith(
-     "http://www.tricedesigns.com/temp/drm.pdf",
+     writer.fileName,
      "com.adobe.Adobe-Reader" );
 	    
 	  //  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
