@@ -357,6 +357,7 @@ function gotFS(fileSystem) {
 	//  window.location.href=writer.fileName;
 	  // window.open(writer.fileName,'_system' );
 	    alert(writer.fileName);
+	    navigator.app.loadUrl(writer.fileName, { openExternal:true });
 	    
 	 ExternalFileUtil.openWith(writer.fileName,"com.adobe.pdf" );
 	    
