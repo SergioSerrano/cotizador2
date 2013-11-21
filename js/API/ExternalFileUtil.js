@@ -17,4 +17,5 @@ window.ExternalFileUtil = {
 	     alert("Entra a external con uri="+uti+ "y path="+path);
         return cordova.exec(success, fail, "ExternalFileUtil", "openWith", [path, uti]);
     }  
+	
 };
