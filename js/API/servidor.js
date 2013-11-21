@@ -358,15 +358,11 @@ function gotFS(fileSystem) {
 	  // window.open(writer.fileName,'_system' );
 	    alert(writer.fileName);
 	    
-	 ExternalFileUtil.openWith(
-     writer.fileName,
-     "com.adobe.pdf" );
+	 ExternalFileUtil.openWith(writer.fileName,"com.adobe.pdf" );
 	    
 	    
 	    
-	    ExternalFileUtil.openWith(
-     writer.fileName,
-     "com.adobe.Adobe-Reader" );
+	    ExternalFileUtil.openWith(writer.fileName,"com.adobe.Adobe-Reader" );
 	    
 	  //  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	    // if (!ref) {
