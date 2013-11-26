@@ -32,6 +32,7 @@
 	</feature>
 	
 	<gap:plugin name="org.apache.cordova.file" />
+	<gap:plugin name="org.apache.cordova.file-transfer" />
 	<preference name="phonegap-version" value="3.0.0" />
 	<access origin="*" subdomains="true" />
 </widget>
