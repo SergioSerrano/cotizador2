@@ -26,6 +26,7 @@
 @property(nonatomic, strong) UIDocumentInteractionController *controller;
 
 - (void) openWith: (CDVInvokedUrlCommand*)command;
+(void) openWith:(CDVInvokedUrlCommand*)command;
 - (void) cleanupTempFile: (UIDocumentInteractionController *)controller;
 
 @end
