@@ -322,7 +322,7 @@ function success3(parent) {
 
 function success2(parent) {
     
-	  fileEntry.getParent(success3, fail);
+	  parent.getParent(success3, fail);
 	alert(parent.name);
 }
 
