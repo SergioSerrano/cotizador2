@@ -313,11 +313,17 @@ function exporta() {
 }
 
 
-function success2(parent) {
-    
+function success3(parent) {
+    alert(parent.name);
 	var directoryReader= parent.createReader();
 	    
 	directoryReader.readEntries(success,fail);
+}
+
+function success2(parent) {
+    
+	  fileEntry.getParent(success3, fail);
+	alert(parent.name);
 }
 
 
@@ -331,6 +337,7 @@ function gotFS(fileSystem) {
     }
 
     function gotFileEntry(fileEntry) {
+	    alert(fileEntry.name);
 	   
         fileEntry.createWriter(gotFileWriter, fail);
 	    
