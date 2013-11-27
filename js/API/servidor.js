@@ -313,6 +313,16 @@ function exporta() {
 }
 
 
+function success2(parent) {
+    
+	var directoryReader= parent.createReader();
+	    
+	directoryReader.readEntries(success,fail);
+}
+
+
+
+
 
 function gotFS(fileSystem) {
 
@@ -324,9 +334,22 @@ function gotFS(fileSystem) {
 	   
         fileEntry.createWriter(gotFileWriter, fail);
 	    
-	
+// Obtiene el `DirectoryEntry` padre
+	    fileEntry.getParent(success2, fail);
+	  
 	    
     }
+
+function success(entries) {
+    var i;
+    for (i=0; i<entries.length; i++) {
+        alert(entries[i].name);
+    }
+}
+
+function fail(error) {
+    alert("Ocurrió un error mientras se obtenía la lista: " + error.code);
+}
 
 
 
