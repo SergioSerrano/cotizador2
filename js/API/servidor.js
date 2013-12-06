@@ -387,11 +387,13 @@ function gotFileWriter(writer)
 	//window.open(writer.fileName,'_system','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet' );
 	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
-	alert(writer.fileName);
+	alert(wencodeURI(writer.fileName));
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
 	Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(writer.fileName) );
+	Cordova.exec("com.adobe.pdf", encodeURI(writer.fileName) );
+	Cordova.exec("om.adobe.Adobe-Reader", encodeURI(writer.fileName) );
 
 	//  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	// if (!ref) {
