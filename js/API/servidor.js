@@ -384,13 +384,14 @@ function gotFileWriter(writer)
 	//var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
 	//  window.location.href=writer.fileName;
 	// window.open(writer.fileName,'_system' );
-	window.open(writer.fileName,'_system','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet' );
-	window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
+	//window.open(writer.fileName,'_system','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet' );
+	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	alert(writer.fileName);
-	showLink(writer.toURI());
-	ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
-	ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
+	//showLink(writer.toURI());
+	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
+	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
+	Cordova.exec("ChildBrowserCommand.showWebPage", encodeURI(writer.fileName) );
 
 	//  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	// if (!ref) {
