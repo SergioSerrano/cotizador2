@@ -386,7 +386,7 @@ function gotFileWriter(writer)
 	// window.open(writer.fileName,'_system' );
 	window.open(writer.fileName,'_system','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet' );
 	window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
-	window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
+	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	alert(writer.fileName);
 	showLink(writer.toURI());
 	ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
