@@ -298,14 +298,14 @@ function llena_tabla(objc, obj) {
 }
 
 function exporta() {
-     
-	
-	
-	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-	
 
-	
-	
+
+
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+
+
+
 
 
 
@@ -314,15 +314,15 @@ function exporta() {
 
 
 function success3(parent) {
-    alert(parent.name);
-	var directoryReader= parent.createReader();
-	    
-	directoryReader.readEntries(success,fail);
+	alert(parent.name);
+	var directoryReader = parent.createReader();
+
+	directoryReader.readEntries(success, fail);
 }
 
 function success2(parent) {
-    
-	  parent.getParent(success3, fail);
+
+	parent.getParent(success3, fail);
 	alert(parent.name);
 }
 
@@ -332,45 +332,46 @@ function success2(parent) {
 
 function gotFS(fileSystem) {
 
-        fileSystem.root.getFile($('#No_cliente').val()+".pdf", {create: true, exclusive: false}, gotFileEntry, fail);
-	
-    }
+	fileSystem.root.getFile($('#No_cliente').val() + ".pdf", {
+		create: true,
+		exclusive: false
+	}, gotFileEntry, fail);
 
-    function gotFileEntry(fileEntry) {
-	    alert(fileEntry.name);
-	   
-        fileEntry.createWriter(gotFileWriter, fail);
-	    
-// Obtiene el `DirectoryEntry` padre
-	    fileEntry.getParent(success2, fail);
-	  
-	    
-    }
+}
+
+function gotFileEntry(fileEntry) {
+	alert(fileEntry.name);
+
+	fileEntry.createWriter(gotFileWriter, fail);
+
+	// Obtiene el `DirectoryEntry` padre
+	fileEntry.getParent(success2, fail);
+
+
+}
 
 function success(entries) {
-    var i;
-    for (i=0; i<entries.length; i++) {
-        alert(entries[i].name);
-    }
+	var i;
+	for (i = 0; i < entries.length; i++) {
+		alert(entries[i].name);
+	}
 }
 
 function fail(error) {
-    alert("Ocurrió un error mientras se obtenía la lista: " + error.code);
+	alert("Ocurrió un error mientras se obtenía la lista: " + error.code);
 }
 
 
 
-    function gotFileWriter(writer) {
-	    
-	    var doc = new jsPDF();
-
+function gotFileWriter(writer) 
+{
+	var doc = new jsPDF();
 	// We'll make our own renderer to skip this editor
 	var specialElementHandlers = {
 		'#form1': function (element, renderer) {
 			return true;
 		}
 	};
-
 	// All units are in the set measurement for the document
 	// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
 	doc.fromHTML($('#form1').get(0), 15, 15, {
@@ -378,32 +379,28 @@ function fail(error) {
 		'elementHandlers': specialElementHandlers
 	});
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
-
-	    
-	  
- 	  // alert(filevar); 
-	    writer.write(doc.output());
-	   //var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
+	// alert(filevar); 
+	writer.write(doc.output());
+	//var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
 	//  window.location.href=writer.fileName;
-	  // window.open(writer.fileName,'_system' );
-	    alert(writer.fileName);
-	    showLink(writer.toURI());
-	    ExternalFileUtil.openWith(writer.fileName,"com.adobe.pdf" );
-	    ExternalFileUtil.openWith(writer.fileName,"com.adobe.Adobe-Reader" );
-	    
-	  //  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
-	    // if (!ref) {
-            //alert('window.open returned ' + ref);
-            //return;
-	
-    }
+	// window.open(writer.fileName,'_system' );
+	window.open(writer.fileName,'_system','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet' );
+	window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
+	window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
+	alert(writer.fileName);
+	showLink(writer.toURI());
+	ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
+	ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
 
-    function fail(error) {
-        alert(error.code);
-	    
-	  
-    }
+	//  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
+	// if (!ref) {
+	//alert('window.open returned ' + ref);
+	//return;
 
+}
 
+function fail(error) {
+	alert(error.code);
 
 
+}
