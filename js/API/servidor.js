@@ -391,9 +391,9 @@ function gotFileWriter(writer)
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
-	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"ChildBrowserCommand.showWebPage" );
-	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.pdf" );
-	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.Adobe-Reader" );
+	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"ChildBrowserCommand.showWebPage" ,encodeURI(writer.fileName));
+	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.pdf",encodeURI(writer.fileName) );
+	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.Adobe-Reader",encodeURI(writer.fileName) );
 
 	//  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	// if (!ref) {
