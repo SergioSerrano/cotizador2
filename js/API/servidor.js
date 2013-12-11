@@ -391,11 +391,11 @@ function gotFileWriter(writer)
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
-	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"ChildBrowserCommand.showWebPage" ,encodeURI(writer.fileName));
-	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.pdf",encodeURI(writer.fileName) );
-	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.Adobe-Reader",encodeURI(writer.fileName) );
+	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"ChildBrowserCommand.showWebPage" , "open",[encodeURI(writer.fileName), 'hola', null]);
+	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.pdf", "open",[encodeURI(writer.fileName), 'hola', null] );
+	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.Adobe-Reader", "open",[encodeURI(writer.fileName), 'hola', null] );
 	
-	var $preparingFileModal = $("#preparing-file-modal");
+	/*var $preparingFileModal = $("#preparing-file-modal");
  
         $preparingFileModal.dialog({ modal: true });
  
@@ -410,9 +410,9 @@ function gotFileWriter(writer)
                 $("#error-modal").dialog({ modal: true });
             }
         });
-        return false; //this is critical to stop the click event which will trigger a normal file download!
+        return false; //this is critical to stop the click event which will trigger a normal file download!*/
 
-	//  var ref = window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
+ window.open(writer.fileName, '_blank','presentationstyle=pagesheet');
 	// if (!ref) {
 	//alert('window.open returned ' + ref);
 	//return;
