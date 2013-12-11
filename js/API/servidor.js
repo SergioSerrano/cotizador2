@@ -412,7 +412,7 @@ function gotFileWriter(writer)
         });
         return false; //this is critical to stop the click event which will trigger a normal file download!*/
 
- window.open(writer.fileName, '_blank','presentationstyle=UIModalPresentationPageSheet;toolbar=yes;closebuttoncaption=true');
+ window.open(writer.fileName, '_system','presentationstyle=UIModalPresentationPageSheet,toolbar=yes,closebuttoncaption=true');
 	// if (!ref) {
 	//alert('window.open returned ' + ref);
 	//return;
