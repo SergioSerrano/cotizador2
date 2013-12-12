@@ -402,7 +402,7 @@ function gotFileWriter(writer)
        });
        return false; //this is critical to stop the click event which will trigger a normal file download!*/
 	ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.pdf" );
-	
+	ExternalFileUtil.openWith( "http://www.tricedesigns.com/temp/drm.pdf", "com.adobe.pdf" );
  	//window.open(writer.fileName, '_system','presentationstyle=UIModalPresentationPageSheet,toolbar=yes,closebuttoncaption=true,location=yes,enableViewportScale=yes');
 	// if (!ref) {
 	//alert('window.open returned ' + ref);
