@@ -43,6 +43,14 @@
     [cont.view addSubview:spinner];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Alert Title here"
+                  message: @"path %@, uti:%@", path, uti
+                  delegate: self
+                  cancelButtonTitle:@"Cancel"
+                  otherButtonTitles:@"OK",nil];
+	[alert show];
+    [alert release];	    
+		    
         //NSLog(@"path %@, uti:%@", path, uti);
 
         NSArray *parts = [path componentsSeparatedByString:@"="];
@@ -88,7 +96,20 @@
         });
     });
 }
-
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex   
+   {
+       if (buttonIndex == 0) 
+       {
+            NSLog(@"user pressed Button Indexed 0");
+            // Any action can be performed here
+       }
+       else 
+       {
+            NSLog(@"user pressed Button Indexed 1");
+            // Any action can be performed here
+       }
+   }
+   
 - (void) documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *)controller {
     //NSLog(@"documentInteractionControllerDidDismissOpenInMenu");
     [self cleanupTempFile:controller];
