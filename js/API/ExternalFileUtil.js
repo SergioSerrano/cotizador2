@@ -12,10 +12,8 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 window.ExternalFileUtil = {
-   
+    
     openWith: function ( path, uti, success, fail) {
-	     alert("Entra a external con uri="+uti+ "y path="+path);
-        return cordova.exec(success, fail, "ExternalFileUtil", "openWith", [path, uti]);
+        cordova.exec(success, fail, "ExternalFileUtil", "openWith", [path, uti]);
     }  
-	
 };

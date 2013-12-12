@@ -314,14 +314,11 @@ function exporta() {
 
 
 function success3(parent) {
-	
 	var directoryReader = parent.createReader();
-
 	directoryReader.readEntries(success, fail);
 }
 
 function success2(parent) {
-
 	parent.getParent(success3, fail);
 	alert(parent.name);
 }
@@ -331,12 +328,10 @@ function success2(parent) {
 
 
 function gotFS(fileSystem) {
-
 	fileSystem.root.getFile($('#No_cliente').val() + ".pdf", {
 		create: true,
 		exclusive: false
 	}, gotFileEntry, fail);
-
 }
 
 function gotFileEntry(fileEntry) {
@@ -391,28 +386,23 @@ function gotFileWriter(writer)
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
-	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"ChildBrowserCommand.showWebPage" , "open");
-	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.pdf", "open" );
-	Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.Adobe-Reader", "open" );
-	
+	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"ChildBrowserCommand.showWebPage" , "open");
+	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.pdf", "open" );
+	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.Adobe-Reader", "open" );
 	/*var $preparingFileModal = $("#preparing-file-modal");
- 
         $preparingFileModal.dialog({ modal: true });
- 
         $.fileDownload(encodeURI(writer.fileName), {
             successCallback: function (url) {
- 
                 $preparingFileModal.dialog('close');
             },
             failCallback: function (responseHtml, url) {
- 
                 $preparingFileModal.dialog('close');
                 $("#error-modal").dialog({ modal: true });
-            }
-        });
-        return false; //this is critical to stop the click event which will trigger a normal file download!*/
-
- window.open(writer.fileName, '_system','presentationstyle=UIModalPresentationPageSheet,toolbar=yes,closebuttoncaption=true,location=yes,enableViewportScale=yes');
+           }
+       });
+       return false; //this is critical to stop the click event which will trigger a normal file download!*/
+	ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.pdf" );
+ 	//window.open(writer.fileName, '_system','presentationstyle=UIModalPresentationPageSheet,toolbar=yes,closebuttoncaption=true,location=yes,enableViewportScale=yes');
 	// if (!ref) {
 	//alert('window.open returned ' + ref);
 	//return;
