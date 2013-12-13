@@ -383,7 +383,7 @@ function gotFileWriter(writer)
 	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	alert(encodeURI(writer.fileName));
-	//window.plugins.emailComposer.showEmailComposerWithCallback(callback,"sserrano@victorinox.com.mx","body","sserrano@victorinox.com.mx","","",true,[[encodeURI(writer.fileName)]],[[encodeURI(writer.fileName),doc.output()]);
+	window.plugins.emailComposer.showEmailComposerWithCallback(callback,"sserrano@victorinox.com.mx","body","sserrano@victorinox.com.mx","","",true,null,null);
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
