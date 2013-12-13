@@ -383,6 +383,7 @@ function gotFileWriter(writer)
 	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	alert(encodeURI(writer.fileName));
+	window.plugins.emailcomposer.show
 	window.plugins.emailComposer.showEmailComposerWithCallback(callback,"sserrano@victorinox.com.mx","body","sserrano@victorinox.com.mx","","",true,null,null);
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
@@ -408,6 +409,11 @@ function gotFileWriter(writer)
 	// if (!ref) {
 	//alert('window.open returned ' + ref);
 	//return;
+
+}
+function callback(error) {
+	alert(error.code);
+
 
 }
 
