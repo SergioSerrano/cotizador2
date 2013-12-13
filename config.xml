@@ -33,6 +33,7 @@
 	
 	<gap:plugin name="org.apache.cordova.file" />
 	<gap:plugin name="org.apache.cordova.file-transfer" />
+	<gap:plugin name="com.jcjee.plugins.emailcomposer" />
 	<preference name="phonegap-version" value="3.0.0" />
 	<access origin="*" subdomains="true" />
 </widget>
