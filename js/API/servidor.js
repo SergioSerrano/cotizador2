@@ -279,7 +279,6 @@ function llena_datos_cliente(obj) {
 	$('#tel').val(obj.telefono);
 	$('#calle').val(obj.calle);
 	$('#cp').val(obj.cp);
-
 	$('#colonia').val(obj.col);
 	$('#status').val(obj.status);
 	$('#mail').val(obj.mail);
@@ -383,8 +382,8 @@ function gotFileWriter(writer)
 	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	alert(encodeURI(writer.fileName));
-	window.plugins.emailcomposer.show
-	window.plugins.emailComposer.showEmailComposerWithCallback(callback,"sserrano@victorinox.com.mx","body","sserrano@victorinox.com.mx","","",true,null,null);
+	
+	window.plugins.emailComposer.OPEN(null,"body","sserrano@victorinox.com.mx",[],[],false);
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
