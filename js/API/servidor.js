@@ -382,8 +382,16 @@ function gotFileWriter(writer)
 	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	alert(encodeURI(writer.fileName));
-	
-	window.plugins.emailComposer.OPEN(null,"body","sserrano@victorinox.com.mx",[],[],false);
+	window.plugin.email.open();
+//	window.plugin.email.open(null,"body","sserrano@victorinox.com.mx",[],[],false);
+	window.plugin.email.open({
+    to:      ['sserrano@victorinox.com.mx'],
+    cc:      ['sserrano@victorinox.com.mx'],
+    bcc:     ['john.doe@victorinox.com.mx', 'jane.doe@victorinox.com.mx],
+    subject: 'Hello World!',
+    body:    '<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>',
+    isHtml:  true
+});
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
