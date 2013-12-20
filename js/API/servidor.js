@@ -382,9 +382,9 @@ function gotFileWriter(writer)
 	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
 	alert(encodeURI(writer.fileName));
-	window.plugin.email.open();
+	window.plugin.email.showEmailComposer ();
 //	window.plugin.email.open(null,"body","sserrano@victorinox.com.mx",[],[],false);
-	window.plugin.email.open({
+	window.plugin.email.showEmailComposer ({
     to:      ['sserrano@victorinox.com.mx'],
     cc:      ['sserrano@victorinox.com.mx'],
     bcc:     ['john.doe@victorinox.com.mx', 'jane.doe@victorinox.com.mx],
