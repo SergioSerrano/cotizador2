@@ -412,8 +412,8 @@ function gotFileWriter(writer)
 	//return;
 
 }
-function callback(error) {
-	alert(error);
+function callback(error1) {
+	alert(error1);
 
 
 }
