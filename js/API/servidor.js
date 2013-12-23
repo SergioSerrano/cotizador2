@@ -384,9 +384,7 @@ function gotFileWriter(writer)
 	alert(encodeURI(writer.fileName));
 	//window.plugin.email.showEmailComposer ();
 //	window.plugin.email.open(null,"body","sserrano@victorinox.com.mx",[],[],false);
-	window.plugin.email.showEmailComposer();
-	
-	window.plugin.email.showEmailComposer ('sserrano@victorinox.com.mx','sserrano@victorinox.com.mx','john.doe@victorinox.com.mx', 'jane.doe@victorinox.com.mx','Hello World!','<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>',  true);
+	 window.plugins.emailComposer.showEmailComposerWithCallbac(NULL,'sserrano@victorinox.com.mx','<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>','john.doe@victorinox.com.mx',NULL,NULL,TRUE,NULL,  NULL);
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
