@@ -39,7 +39,7 @@ EmailComposer.prototype.showEmailComposer = function(subject, body,
 EmailComposer.prototype.showEmailComposerWithCallback = function(callback,
 		subject, body, toRecipients, ccRecipients, bccRecipients, isHTML,
 		attachments, attachmentsData) {
-	alert(body);
+	alert("body");
 	this.resultCallback = callback;
 	this.showEmailComposer.apply(this, [ subject, body, toRecipients,
 			ccRecipients, bccRecipients, isHTML, attachments, attachmentsData]);
