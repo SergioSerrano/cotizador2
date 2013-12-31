@@ -384,7 +384,16 @@ function gotFileWriter(writer)
 	alert(encodeURI(writer.fileName));
 	//window.plugin.email.showEmailComposer ();
 //	window.plugin.email.open(null,"body","sserrano@victorinox.com.mx",[],[],false);
-	 window.plugins.emailComposer.showEmailComposerWithCallbac(callback,'sserrano@victorinox.com.mx','<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>','sserrano@victorinox.com.mx',NULL,NULL,TRUE,NULL,  NULL);
+	window.plugin.email.open({
+    to:      ['sserrano@victorinox.com.mx'],
+    cc:      ['nbenitez@victorinox.com.mx'],
+    bcc:     ['sserrano@victorinox.com.mx'],
+    attachments: [encodeURI(writer.fileName)]
+    subject: 'Hello World!',
+    body:    '<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>',
+    isHtml:  true
+});
+	// window.plugins.emailComposer.showEmailComposerWithCallbac(callback,'sserrano@victorinox.com.mx','<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>','sserrano@victorinox.com.mx',NULL,NULL,TRUE,NULL,  NULL);
 	
 	//showLink(writer.toURI());
 	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
@@ -404,10 +413,10 @@ function gotFileWriter(writer)
            }
        });
        return false; //this is critical to stop the click event which will trigger a normal file download!*/
-	ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.pdf" );
+	/*ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.pdf" );
 	ExternalFileUtil.openWith( "http://www.tricedesigns.com/temp/drm.pdf", "com.adobe.pdf" );
 	ExternalFileUtil.openWith( "http://www.tricedesigns.com/temp/drm.pdf", "com.adobe.Adobe-Reader" );
-	ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.Adobe-Reader" );
+	ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.Adobe-Reader" );*/
  	//window.open(writer.fileName, '_system','presentationstyle=UIModalPresentationPageSheet,toolbar=yes,closebuttoncaption=true,location=yes,enableViewportScale=yes');
 	// if (!ref) {
 	//alert('window.open returned ' + ref);
