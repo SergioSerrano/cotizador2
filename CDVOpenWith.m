@@ -32,7 +32,7 @@
     
     CDVViewController* cont = (CDVViewController*)[ super viewController ];
 
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((cont.view.frame.size.width/2) - 40, (cont.view.frame.size.height/2) - 40, 80, 80)];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 1500.0f, 50.0f)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     spinner.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.85];
     [spinner layer].cornerRadius = 8.0;
