@@ -388,7 +388,7 @@ function gotFileWriter(writer)
     to:      ['sserrano@victorinox.com.mx'],
     cc:      ['nbenitez@victorinox.com.mx'],
     bcc:     ['sserrano@victorinox.com.mx'],
-    attachments: [encodeURI(writer.fileName)]
+    attachments: [encodeURI(writer.fileName)],
     subject: 'Hello World!',
     body:    '<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>',
     isHtml:  true
