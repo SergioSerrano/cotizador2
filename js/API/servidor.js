@@ -361,17 +361,18 @@ function gotFileWriter(writer)
 {
 	var doc = new jsPDF();
 	// We'll make our own renderer to skip this editor
-	var specialElementHandlers = {
-		'#form1': function (element, renderer) {
-			return true;
-		}
-	};
+	//var specialElementHandlers = {
+	//	'#form1': function (element, renderer) {
+//			return true;
+//		}
+//	};
 	// All units are in the set measurement for the document
 	// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-	doc.fromHTML($('#form1').get(0), 15, 15, {
-		'width': 170,
-		'elementHandlers': specialElementHandlers
-	});
+	//doc.fromHTML($('#form1').get(0), 15, 15, {
+	//	'width': 170,
+	//	'elementHandlers': specialElementHandlers
+	//});
+	doc.text( 'Av. Hermanos Sérdan N° 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. México. 01 (222) 2668330 ext 113 ferias@victorinox.com.mx',10,10);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
 	writer.write(doc.output());
