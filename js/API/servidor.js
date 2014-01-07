@@ -372,7 +372,7 @@ function gotFileWriter(writer)
 	//	'width': 170,
 	//	'elementHandlers': specialElementHandlers
 	//});
-	doc.text( 'Av. Hermanos Sérdan N° 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. México. 01 (222) 2668330 ext 113 ferias@victorinox.com.mx',10,10);
+	doc.text( 'Av. Hermanos S&eacute;rdan N&deg; 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. M&eacute;xico. 01 (222) 2668330 ext 113 ferias&#64;victorinox.com.mx',1,1);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
 	writer.write(doc.output());
