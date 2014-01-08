@@ -377,7 +377,7 @@ function gotFileWriter(writer)
     
 	doc.text(5,15,'Av. Hermanos Serdan No. 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. Mexico. 01 (222) 2668330 ext 113.');
 	doc.text(5,20,'ferias@victorinox.com.mx');
-	doc.addImage(imgData2, 'JPEG', 5, 35, 5, 10);
+	doc.addImage(imgData2, 'JPEG', 5, 35, 21.33, 0.56);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
 	writer.write(doc.output());
