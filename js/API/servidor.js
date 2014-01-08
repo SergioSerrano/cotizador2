@@ -372,10 +372,10 @@ function gotFileWriter(writer)
 	//	'width': 170,
 	//	'elementHandlers': specialElementHandlers
 	//});
-	doc.setFontSize(16);
-    doc.text(40, 30, 'Hola, Felíz Año Nuevo! áéíóú'); 
-	doc.text( 70,40,'Av. Hermanos Sérdan N° 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. México. ');
-	doc.text(50,20,'01 (222) 2668330 ext 113 ferias&#64;victorinox.com.mx');
+	doc.setFontSize(12);
+    
+	doc.text(20,15,'Av. Hermanos Serdan N° 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. México. 01 (222) 2668330 ext 113.');
+	doc.text(20,20,'ferias@victorinox.com.mx');
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
 	writer.write(doc.output());
