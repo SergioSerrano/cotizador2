@@ -365,7 +365,7 @@ function gotFileWriter(writer)
 	var meses1 = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 	var f1 = new Date();
 	var doc = new jsPDF();
-	var contador=23;
+	var contador=25;
 	// We'll make our own renderer to skip this editor
 	//var specialElementHandlers = {
 	//	'#form1': function (element, renderer) {
@@ -392,9 +392,9 @@ function gotFileWriter(writer)
 	doc.text(5,20,'Comprador');
 	doc.text(80,20,'Agente');
 	$.each($('.clave'), function(index, value) {
-				valorclave=$(this).html();
+				valorclave=$(this).val();
 				doc.text(5,contador,valorclave);	
-					contador = contador + 3;
+					contador = contador + 4;
 				});
 	//doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
