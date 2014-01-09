@@ -361,11 +361,12 @@ function gotFileWriter(writer)
 {
 	var temppdf=0;
 	var sumpdf=0;
-	var valorclave=0;
+	var valorclave='';
 	var meses1 = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 	var f1 = new Date();
 	var doc = new jsPDF();
 	var contador=25;
+
 	// We'll make our own renderer to skip this editor
 	//var specialElementHandlers = {
 	//	'#form1': function (element, renderer) {
