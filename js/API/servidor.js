@@ -359,6 +359,8 @@ function fail(error) {
 
 function gotFileWriter(writer) 
 {
+	var meses1 = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+	var f1 = new Date();
 	var doc = new jsPDF();
 	// We'll make our own renderer to skip this editor
 	//var specialElementHandlers = {
@@ -376,10 +378,14 @@ function gotFileWriter(writer)
 	
 	
 	
-	doc.setFontSize(12);   
+	doc.setFontSize(10);   
 	doc.text(5,15,'Av. Hermanos Serdan No. 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. Mexico. 01 (222) 2668330 ext 113.');
 	doc.text(5,20,'ferias@victorinox.com.mx');
-	doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
+	
+	doc.text(5,25,'victorinox');
+	doc.text(30,20,'ferias@victorinox.com.mx');
+	doc.text(45,20,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
+	//doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
 	writer.write(doc.output());
@@ -392,7 +398,7 @@ function gotFileWriter(writer)
 	alert(encodeURI(writer.fileName));
 	//window.plugin.email.showEmailComposer ();
 //	window.plugin.email.open(null,"body","sserrano@victorinox.com.mx",[],[],false);
-	window.plugin.email.open();
+	//window.plugin.email.open();
 	
 //	window.plugin.email.open({to:      ['sserrano@victorinox.com.mx'], cc:      ['nbenitez@victorinox.com.mx'],  bcc:     ['sserrano@victorinox.com.mx'],    attachments: [encodeURI(writer.fileName)],  subject: 'Hello World!',   body:    '<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>',    isHtml:  true});
 	// window.plugins.emailComposer.showEmailComposerWithCallbac(callback,'sserrano@victorinox.com.mx','<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>','sserrano@victorinox.com.mx',NULL,NULL,TRUE,NULL,  NULL);
