@@ -359,9 +359,13 @@ function fail(error) {
 
 function gotFileWriter(writer) 
 {
+	var temppdf=0;
+	var sumpdf=0;
+	var valorclave=0;
 	var meses1 = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 	var f1 = new Date();
 	var doc = new jsPDF();
+	var contador=23;
 	// We'll make our own renderer to skip this editor
 	//var specialElementHandlers = {
 	//	'#form1': function (element, renderer) {
@@ -378,13 +382,20 @@ function gotFileWriter(writer)
 	
 	
 	
-	doc.setFontSize(10);   
-	doc.text(5,15,'Av. Hermanos Serdan No. 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. Mexico. 01 (222) 2668330 ext 113.');
-	doc.text(5,20,'ferias@victorinox.com.mx');
-	
-	doc.text(5,25,'victorinox');
-	doc.text(30,20,'ferias@victorinox.com.mx');
-	doc.text(45,20,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
+	doc.setFontSize(7);   
+	doc.text(5,5,'Av. Hermanos Serdan No. 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. Mexico. 01 (222) 2668330 ext 113. ferias@victorinox.com.mx');
+
+	doc.setFontSize(12); 
+	doc.text(5,15,'victorinox');
+	doc.text(40,15,'COTIZACION');
+	doc.text(80,15,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
+	doc.text(5,20,'Comprador');
+	doc.text(80,20,'Agente');
+	$.each($('.clave'), function(index, value) {
+				valorclave=$(this).html();
+				doc.text(5,contador,valorclave);	
+					contador = contador + 3;
+				});
 	//doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
