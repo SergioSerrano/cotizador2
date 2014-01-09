@@ -392,7 +392,7 @@ function gotFileWriter(writer)
 	doc.text(80,15,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
 	doc.text(5,20,'Comprador');
 	doc.text(80,20,'Agente');
-	$.each($('.clave'), function(index, value) {
+	$.each($('.clave123'), function(index, value) {
 				valorclave=$(this).val();
 				doc.text(5,contador,valorclave);	
 					contador = contador + 4;
