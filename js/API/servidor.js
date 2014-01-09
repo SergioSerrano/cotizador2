@@ -289,11 +289,11 @@ function llena_tabla(objc, obj) {
 
 	var valor = (isNaN(parseFloat(obj.precio))) ? 0 : parseFloat(obj.precio);
 	objc.parents('tr').children('.descripcion').children('#las').remove();
-	$('<label style="text-align:right" data-theme="b" id="las">' + obj.descripcion + '</label>').appendTo(objc.parents('tr').children('.descripcion'));
+	$('<label style="text-align:right" data-theme="b" id="las" class="cldescripcion">' + obj.descripcion + '</label>').appendTo(objc.parents('tr').children('.descripcion'));
 	objc.parents('tr').children('.p_unit').children('#labo').remove();
-	$('<label  style="visibility:hidden" id="labo">' + valor + '</label>').appendTo(objc.parents('tr').children('.p_unit'));
+	$('<label  style="visibility:hidden" id="labo" ">' + valor + '</label>').appendTo(objc.parents('tr').children('.p_unit'));
 	objc.parents('tr').children('.p_unit').children('#lab').remove();
-	$('<label style="text-align:right" data-theme="b" id="lab">$' + valor.format() + '</label>').appendTo(objc.parents('tr').children('.p_unit'));
+	$('<label style="text-align:right" data-theme="b" id="lab" class="clprecio">$' + valor.format() + '</label>').appendTo(objc.parents('tr').children('.p_unit'));
 }
 
 function exporta() {
@@ -365,7 +365,7 @@ function gotFileWriter(writer)
 	var meses1 = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 	var f1 = new Date();
 	var doc = new jsPDF();
-	var contador=25;
+	var contador=30;
 
 	// We'll make our own renderer to skip this editor
 	//var specialElementHandlers = {
@@ -395,7 +395,24 @@ function gotFileWriter(writer)
 	$.each($('.clave123'), function(index, value) {
 				valorclave=$(this).val();
 				doc.text(5,contador,valorclave);	
-					contador = contador + 4;
+					contador = contador + 5;
+				});
+	contador=30;
+	$.each($('.cnt123'), function(index, value) {
+				valorclave=$(this).val();
+				doc.text(25,contador,valorclave);	
+					contador = contador + 5;
+				});
+	contador=30;
+	$.each($('.cldescripcion'), function(index, value) {
+				valorclave=$(this).val();
+				doc.text(45,contador,valorclave);	
+					contador = contador + 5;
+				});
+	$.each($('.clprecio'), function(index, value) {
+				valorclave=$(this).val();
+				doc.text(65,contador,valorclave);	
+					contador = contador + 5;
 				});
 	//doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
