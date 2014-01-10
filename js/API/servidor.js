@@ -385,11 +385,11 @@ function gotFileWriter(writer)
 	
 	
 	
-	doc.setFontSize(9);   
-	doc.text(5,lineas,'Av. Hermanos Serdan No. 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. Mexico. 01 (222) 2668330 ext 113. ferias@victorinox.com.mx');
-	lineas=lineas+10;
+	
+	
 	doc.setFontSize(12); 
-	doc.text(5,lineas,'VICTORINOX');
+	doc.text(120,lineas,'VICTORINOX');
+	lineas=lineas+10;
 	doc.text(60,lineas,'COTIZACION');
 	doc.text(120,lineas,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
 	lineas=lineas+10;
@@ -412,8 +412,14 @@ function gotFileWriter(writer)
 	doc.text(60,lineas,'Status');
 	doc.text(120,lineas,'Mail');
 	
+	contador=lineas+50;
 	
-	contador=lineas+10;
+	
+	doc.text(5,lineas,'Por medio de la presente le envio un cordial saludo y a su vez le hago llegar la cotizacion solicitada');
+	
+	
+	contador=lineas+50;
+	
 	$.each($('.clave123'), function(index, value) {
 				valorclave=$(this).val();
 				doc.text(5,contador,valorclave);	
