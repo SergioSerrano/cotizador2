@@ -396,23 +396,51 @@ function gotFileWriter(writer)
 	doc.text(5,lineas,'Comprador');
 	doc.text(120,lineas,'Agente');
 	lineas=lineas+5;
+	doc.text(5,lineas,$('#comprador').val());
+	doc.text(120,lineas,$('#agente').val());
+	
+	lineas=lineas+5;
 	doc.text(5,lineas,'Cliente');
 	doc.text(60,lineas,'Poblacion');
 	doc.text(120,lineas,'Condiciones');
 	lineas=lineas+5;
+	doc.text(5,lineas,$('#no_cliente').val());
+	doc.text(120,lineas,$('#poblacion').val());
+	doc.text(5,lineas,$('#condic').val());
+	
+	lineas=lineas+5;
 	doc.text(5,lineas,'Razon Social');
 	doc.text(60,lineas,'Estado');
 	doc.text(120,lineas,'Telefono');
+	
+	lineas=lineas+5;
+	doc.text(5,lineas,$('#razon').val());
+	doc.text(120,lineas,$('#estado').val());
+	doc.text(5,lineas,$('#tel').val());
+	
 	lineas=lineas+5;
 	doc.text(5,lineas,'Calle');
 	doc.text(60,lineas,'C.P.');
 	doc.text(120,lineas,'Fax');
+	
+	
+	lineas=lineas+5;
+	doc.text(5,lineas,$('#calle').val());
+	doc.text(120,lineas,$('#cp').val());
+	doc.text(5,lineas,$('#fax').val());
+	
+	
 	lineas=lineas+5;
 	doc.text(5,lineas,'Colonia');
 	doc.text(60,lineas,'Status');
 	doc.text(120,lineas,'Mail');
 	
-	contador=lineas+50;
+	lineas=lineas+5;
+	doc.text(5,lineas,$('#colonia').val());
+	doc.text(120,lineas,$('#status').val());
+	doc.text(5,lineas,$('#mail').val());
+	
+	lineas=lineas+50;
 	
 	
 	doc.text(5,lineas,'Por medio de la presente le envio un cordial saludo y a su vez le hago llegar la cotizacion solicitada');
@@ -425,26 +453,26 @@ function gotFileWriter(writer)
 				doc.text(5,contador,valorclave);	
 					contador = contador + 5;
 				});
-	contador=lineas+10;
+	contador=lineas+50;
 	$.each($('.cnt123'), function(index, value) {
 				valorclave=$(this).val();
 				doc.text(45,contador,valorclave);	
 					contador = contador + 5;
 				});
-	contador=lineas+10;
+	contador=lineas+50;
 	$.each($('.cldescripcion'), function(index, value) {
 				valorclave=$(this).text();
 				doc.text(55,contador,valorclave);	
 					contador = contador + 5;
 				});
-	contador=lineas+10;
+	contador=lineas+50;
 	$.each($('.clprecio'), function(index, value) {
 				valorclave=$(this).text();
 				doc.text(115,contador,valorclave);	
 					contador = contador + 5;
 				});
 	
-	contador=lineas+10;
+	contador=lineas+50;
 	$.each($('.cl_stotal'), function(index, value) {
 				valorclave=$(this).text();
 				doc.text(135,contador,valorclave);	
