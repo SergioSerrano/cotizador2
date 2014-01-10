@@ -136,7 +136,7 @@ $(document).ready(function (e) {
 				$('<label style="visibility:hidden"  data-theme="b" id="lacT">' + suma + '</label>').appendTo($(this).parents('tr').children('.col_total'));
 
 				$(this).parents('tr').children('.col_total').children('#lac').remove();
-				$('<label style="text-align:right"  data-theme="b" id="lac">$' + suma.format() + '</label>').appendTo($(this).parents('tr').children('.col_total'));
+				$('<label style="text-align:right"  data-theme="b" id="lac" class="cl_stotal">$' + suma.format() + '</label>').appendTo($(this).parents('tr').children('.col_total'));
 
 
 				var summ = 0;

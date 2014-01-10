@@ -409,9 +409,25 @@ function gotFileWriter(writer)
 				doc.text(45,contador,valorclave);	
 					contador = contador + 5;
 				});
+	contador=30;
 	$.each($('.clprecio'), function(index, value) {
 				valorclave=$(this).text();
-				doc.text(65,contador,valorclave);	
+				doc.text(100,contador,valorclave);	
+					contador = contador + 5;
+				});
+	contador=30;
+	$.each($('.clprecio'), function(index, value) {
+				valorclave=$(this).text();
+				doc.text(100,contador,valorclave);	
+					contador = contador + 5;
+				});
+	
+	
+	
+	contador=30;
+	$.each($('.cl_stotal'), function(index, value) {
+				valorclave=$(this).text();
+				doc.text(125,contador,valorclave);	
 					contador = contador + 5;
 				});
 	//doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
