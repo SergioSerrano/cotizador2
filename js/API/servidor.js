@@ -405,12 +405,12 @@ function gotFileWriter(writer)
 				});
 	contador=30;
 	$.each($('.cldescripcion'), function(index, value) {
-				valorclave=$(this).val();
+				valorclave=$(this).text();
 				doc.text(45,contador,valorclave);	
 					contador = contador + 5;
 				});
 	$.each($('.clprecio'), function(index, value) {
-				valorclave=$(this).val();
+				valorclave=$(this).text();
 				doc.text(65,contador,valorclave);	
 					contador = contador + 5;
 				});
