@@ -398,7 +398,8 @@ function gotFileWriter(writer)
 	
 	lineas=lineas+5;
 	var comp=$('#comprador').val();
-	doc.text(5,lineas,comp);
+	alert(comp);
+	//doc.text(5,lineas,comp);
 	var agente=$('#agente').val();
 	//doc.text(120,lineas,agente);
 	
