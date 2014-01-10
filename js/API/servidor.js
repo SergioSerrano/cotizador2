@@ -401,6 +401,7 @@ function gotFileWriter(writer)
 	alert(comp);
 	//doc.text(5,lineas,comp);
 	var agente=$('#agente').val();
+	alert(agente);
 	//doc.text(120,lineas,agente);
 	
 	lineas=lineas+5;
