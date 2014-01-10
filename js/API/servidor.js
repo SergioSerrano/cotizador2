@@ -365,7 +365,9 @@ function gotFileWriter(writer)
 	var meses1 = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 	var f1 = new Date();
 	var doc = new jsPDF();
-	var contador=30;
+	var lineas=5;
+	var contador=0;
+	
 
 	// We'll make our own renderer to skip this editor
 	//var specialElementHandlers = {
@@ -383,53 +385,68 @@ function gotFileWriter(writer)
 	
 	
 	
-	doc.setFontSize(7);   
-	doc.text(5,5,'Av. Hermanos Serdan No. 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. Mexico. 01 (222) 2668330 ext 113. ferias@victorinox.com.mx');
-
+	doc.setFontSize(9);   
+	doc.text(5,lineas,'Av. Hermanos Serdan No. 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. Mexico. 01 (222) 2668330 ext 113. ferias@victorinox.com.mx');
+	lineas=lineas+10;
 	doc.setFontSize(12); 
-	doc.text(5,15,'victorinox');
-	doc.text(40,15,'COTIZACION');
-	doc.text(80,15,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
-	doc.text(5,20,'Comprador');
-	doc.text(80,20,'Agente');
+	doc.text(5,lineas,'VICTORINOX');
+	doc.text(60,lineas,'COTIZACION');
+	doc.text(120,lineas,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
+	lineas=lineas+10;
+	doc.text(5,lineas,'Comprador');
+	doc.text(120,lineas,'Agente');
+	lineas=lineas+5;
+	doc.text(5,lineas,'Cliente');
+	doc.text(60,lineas,'Poblacion');
+	doc.text(120,lineas,'Condiciones');
+	lineas=lineas+5;
+	doc.text(5,lineas,'Razon Social');
+	doc.text(60,lineas,'Estado');
+	doc.text(120,lineas,'Telefono');
+	lineas=lineas+5;
+	doc.text(5,lineas,'Calle');
+	doc.text(60,lineas,'C.P.');
+	doc.text(120,lineas,'Fax');
+	lineas=lineas+5;
+	doc.text(5,lineas,'Colonia');
+	doc.text(60,lineas,'Status');
+	doc.text(120,lineas,'Mail');
+	
+	
+	contador=lineas+10;
 	$.each($('.clave123'), function(index, value) {
 				valorclave=$(this).val();
 				doc.text(5,contador,valorclave);	
 					contador = contador + 5;
 				});
-	contador=30;
+	contador=lineas+10;
 	$.each($('.cnt123'), function(index, value) {
 				valorclave=$(this).val();
-				doc.text(25,contador,valorclave);	
-					contador = contador + 5;
-				});
-	contador=30;
-	$.each($('.cldescripcion'), function(index, value) {
-				valorclave=$(this).text();
 				doc.text(45,contador,valorclave);	
 					contador = contador + 5;
 				});
-	contador=30;
-	$.each($('.clprecio'), function(index, value) {
+	contador=lineas+10;
+	$.each($('.cldescripcion'), function(index, value) {
 				valorclave=$(this).text();
-				doc.text(100,contador,valorclave);	
+				doc.text(55,contador,valorclave);	
 					contador = contador + 5;
 				});
-	contador=30;
+	contador=lineas+10;
 	$.each($('.clprecio'), function(index, value) {
 				valorclave=$(this).text();
-				doc.text(100,contador,valorclave);	
+				doc.text(115,contador,valorclave);	
 					contador = contador + 5;
 				});
 	
-	
-	
-	contador=30;
+	contador=lineas+10;
 	$.each($('.cl_stotal'), function(index, value) {
 				valorclave=$(this).text();
-				doc.text(125,contador,valorclave);	
+				doc.text(135,contador,valorclave);	
 					contador = contador + 5;
 				});
+	lineas=contador;
+	
+	
 	//doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
