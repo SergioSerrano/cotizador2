@@ -395,23 +395,25 @@ function gotFileWriter(writer)
 	lineas=lineas+10;
 	doc.text(5,lineas,'Comprador');
 	doc.text(120,lineas,'Agente');
+	
 	lineas=lineas+5;
 	var comp=$('#comprador').val();
 	doc.text(5,lineas,comp);
 	var agente=$('#agente').val();
-	doc.text(120,lineas,agente);
+	//doc.text(120,lineas,agente);
 	
 	lineas=lineas+5;
 	doc.text(5,lineas,'Cliente');
 	doc.text(60,lineas,'Poblacion');
 	doc.text(120,lineas,'Condiciones');
+	
 	lineas=lineas+5;
 	var no_cliente=$('#no_cliente').val();
-	doc.text(5,lineas,no_cliente);
+	//doc.text(5,lineas,no_cliente);
 	var poblacion=$('#poblacion').val();
-	doc.text(120,lineas,poblacion);
+	//doc.text(120,lineas,poblacion);
 	var condic=$('#condic').val();
-	doc.text(5,lineas,condic);
+	//doc.text(5,lineas,condic);
 	
 	lineas=lineas+5;
 	
@@ -421,11 +423,11 @@ function gotFileWriter(writer)
 	
 	lineas=lineas+5;
 	var razon=$('#razon').val();
-	doc.text(5,lineas,razon);
+	//doc.text(5,lineas,razon);
 	var estado=$('#estado').val();
-	doc.text(120,lineas,estado);
+	//doc.text(120,lineas,estado);
 	var tel=$('#tel').val();
-	doc.text(5,lineas,tel);
+	//doc.text(5,lineas,tel);
 	
 	lineas=lineas+5;
 	doc.text(5,lineas,'Calle');
@@ -435,11 +437,11 @@ function gotFileWriter(writer)
 	
 	lineas=lineas+5;
 	var calle=$('#calle').val();
-	doc.text(5,lineas,calle);
+	//doc.text(5,lineas,calle);
 	var cp=$('#cp').val();
-	doc.text(120,lineas,cp);
+	//doc.text(120,lineas,cp);
 	var fax=$('#fax').val();
-	doc.text(5,lineas,fax);
+	//doc.text(5,lineas,fax);
 	
 	
 	lineas=lineas+5;
@@ -448,12 +450,12 @@ function gotFileWriter(writer)
 	doc.text(120,lineas,'Mail');
 	
 	lineas=lineas+5;
-	var colonia=$('#colonia').val();
-	doc.text(5,lineas,colonia);
+	//var colonia=$('#colonia').val();
+	//doc.text(5,lineas,colonia);
 	var status=$('#status').val();
-	doc.text(120,lineas,status);
+	//doc.text(120,lineas,status);
 	var  mail=$('#mail').val();
-	doc.text(5,lineas,mail);
+	//doc.text(5,lineas,mail);
 	
 	lineas=lineas+50;
 	
@@ -497,7 +499,7 @@ function gotFileWriter(writer)
 	
 	lineas=lineas+5;
 	var tt=$('#tt').text();
-	doc.text(130,lineas,tt);
+	//doc.text(130,lineas,tt);
 	
 	doc.text(120,lineas,'Descuento');
 	
@@ -505,10 +507,10 @@ function gotFileWriter(writer)
 	
 	var t_descuento=$('#t_descuento').val();
 	
-	doc.text(130,lineas,t_descuento);
+	//doc.text(130,lineas,t_descuento);
 	
 	lineas=lineas+5;
-	doc.text(130,lineas,t_descuento);
+	//doc.text(130,lineas,t_descuento);
 	
 	
 	//doc.addImage(imgData2, 'JPEG',15, 40, 20, 20);
