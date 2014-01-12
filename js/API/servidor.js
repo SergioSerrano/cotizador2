@@ -522,7 +522,7 @@ function gotFileWriter(writer)
 	//doc.text(130,lineas,t_descuento);
 	
 	
-	doc.addImage(imgData2, 'jpg',15, 40, 20, 20);
+	doc.addImage(imgData2, 'jpg',15, 40, 170, 170);
 	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
 	// alert(filevar); 
 	writer.write(doc.output());
