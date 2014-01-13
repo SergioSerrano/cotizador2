@@ -376,19 +376,7 @@ function gotFileWriter(writer)
 	var contador=0;
 	
 
-	// We'll make our own renderer to skip this editor
-	//var specialElementHandlers = {
-	//	'#form1': function (element, renderer) {
-//			return true;
-//		}
-//	};
-	// All units are in the set measurement for the document
-	// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-	//doc.fromHTML($('#form1').get(0), 15, 15, {
-	//	'width': 170,
-	//	'elementHandlers': specialElementHandlers
-	//});
-	var imgData2='data:image/jpeg;base64,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';
+	
 	
 	
 	
@@ -406,10 +394,10 @@ function gotFileWriter(writer)
 	lineas=lineas+5;
 	var comp=$('#Comprador').val();
 	alert(comp);
-	//doc.text(5,lineas,comp);
+	doc.text(5,lineas,comp);
 	var agente=$('#agente').val();
 	alert(agente);
-	//doc.text(120,lineas,agente);
+	doc.text(120,lineas,agente);
 	
 	lineas=lineas+5;
 	doc.text(5,lineas,'Cliente');
@@ -417,12 +405,12 @@ function gotFileWriter(writer)
 	doc.text(120,lineas,'Condiciones');
 	
 	lineas=lineas+5;
-	var no_cliente=$('#no_cliente').val();
-	//doc.text(5,lineas,no_cliente);
+	var no_cliente=$('#No_cliente').val();
+	doc.text(5,lineas,no_cliente);
 	var poblacion=$('#poblacion').val();
-	//doc.text(120,lineas,poblacion);
+	doc.text(120,lineas,poblacion);
 	var condic=$('#condic').val();
-	//doc.text(5,lineas,condic);
+	doc.text(5,lineas,condic);
 	
 	lineas=lineas+5;
 	
@@ -432,11 +420,11 @@ function gotFileWriter(writer)
 	
 	lineas=lineas+5;
 	var razon=$('#razon').val();
-	//doc.text(5,lineas,razon);
+	doc.text(5,lineas,razon);
 	var estado=$('#estado').val();
-	//doc.text(120,lineas,estado);
+	doc.text(120,lineas,estado);
 	var tel=$('#tel').val();
-	//doc.text(5,lineas,tel);
+	doc.text(5,lineas,tel);
 	
 	lineas=lineas+5;
 	doc.text(5,lineas,'Calle');
@@ -446,11 +434,11 @@ function gotFileWriter(writer)
 	
 	lineas=lineas+5;
 	var calle=$('#calle').val();
-	//doc.text(5,lineas,calle);
+	doc.text(5,lineas,calle);
 	var cp=$('#cp').val();
-	//doc.text(120,lineas,cp);
+	doc.text(120,lineas,cp);
 	var fax=$('#fax').val();
-	//doc.text(5,lineas,fax);
+	doc.text(5,lineas,fax);
 	
 	
 	lineas=lineas+5;
@@ -459,12 +447,12 @@ function gotFileWriter(writer)
 	doc.text(120,lineas,'Mail');
 	
 	lineas=lineas+5;
-	//var colonia=$('#colonia').val();
-	//doc.text(5,lineas,colonia);
+	var colonia=$('#colonia').val();
+	doc.text(5,lineas,colonia);
 	var status=$('#status').val();
-	//doc.text(120,lineas,status);
+	doc.text(120,lineas,status);
 	var  mail=$('#mail').val();
-	//doc.text(5,lineas,mail);
+	doc.text(5,lineas,mail);
 	
 	lineas=lineas+50;
 	
@@ -508,7 +496,7 @@ function gotFileWriter(writer)
 	
 	lineas=lineas+5;
 	var tt=$('#tt').text();
-	//doc.text(130,lineas,tt);
+	doc.text(130,lineas,tt);
 	
 	doc.text(120,lineas,'Descuento');
 	
@@ -516,56 +504,15 @@ function gotFileWriter(writer)
 	
 	var t_descuento=$('#t_descuento').val();
 	
-	//doc.text(130,lineas,t_descuento);
+	doc.text(130,lineas,t_descuento);
 	
 	lineas=lineas+5;
-	//doc.text(130,lineas,t_descuento);
+	doc.text(130,lineas,t_descuento);
 	
 	
-	doc.addImage(imgData2, 'jpg',15, 40, 170, 170);
-	//doc.save('ejemplo'+$('#no_cliente').val()+'.pdf');
-	// alert(filevar); 
+	
 	writer.write(doc.output());
-	//var ref = window.open(filevar, '_system','presentationstyle=pagesheet');
-	//  window.location.href=writer.fileName;
-	// window.open(writer.fileName,'_system' );
-	//window.open(writer.fileName,'_system','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet' );
-	//window.open(writer.fileName,'_blank','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
-	//window.open(writer.fileName,'_self','location=yes,closebuttoncaption="hola",presentationstyle=pagesheet'  );
-	alert(encodeURI(writer.fileName));
-	//window.plugin.email.showEmailComposer ();
-//	window.plugin.email.open(null,"body","sserrano@victorinox.com.mx",[],[],false);
-	//window.plugin.email.open();
 	
-//	window.plugin.email.open({to:      ['sserrano@victorinox.com.mx'], cc:      ['nbenitez@victorinox.com.mx'],  bcc:     ['sserrano@victorinox.com.mx'],    attachments: [encodeURI(writer.fileName)],  subject: 'Hello World!',   body:    '<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>',    isHtml:  true});
-	// window.plugins.emailComposer.showEmailComposerWithCallbac(callback,'sserrano@victorinox.com.mx','<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>','sserrano@victorinox.com.mx',NULL,NULL,TRUE,NULL,  NULL);
-	
-	//showLink(writer.toURI());
-	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.pdf");
-	//ExternalFileUtil.openWith(writer.fileName, "com.adobe.Adobe-Reader");
-	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"ChildBrowserCommand.showWebPage" , "open");
-	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.pdf", "open" );
-	//Cordova.exec(function(winParam) {alert(winParam)},function(error) {alert(error)},"com.adobe.Adobe-Reader", "open" ); 
-	/*var $preparingFileModal = $("#preparing-file-modal");
-        $preparingFileModal.dialog({ modal: true });
-        $.fileDownload(encodeURI(writer.fileName), {
-            successCallback: function (url) {
-                $preparingFileModal.dialog('close');
-            },
-            failCallback: function (responseHtml, url) {
-                $preparingFileModal.dialog('close');
-                $("#error-modal").dialog({ modal: true });
-           }
-       });
-       return false; //this is critical to stop the click event which will trigger a normal file download!*/
-	/*ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.pdf" );
-	ExternalFileUtil.openWith( "http://www.tricedesigns.com/temp/drm.pdf", "com.adobe.pdf" );
-	ExternalFileUtil.openWith( "http://www.tricedesigns.com/temp/drm.pdf", "com.adobe.Adobe-Reader" );
-	ExternalFileUtil.openWith( encodeURI(writer.fileName), "com.adobe.Adobe-Reader" );*/
- 	//window.open(writer.fileName, '_system','presentationstyle=UIModalPresentationPageSheet,toolbar=yes,closebuttoncaption=true,location=yes,enableViewportScale=yes');
-	// if (!ref) {
-	//alert('window.open returned ' + ref);
-	//return;
 
 }
 function callback(error1) {
