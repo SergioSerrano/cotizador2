@@ -106,6 +106,41 @@
 	</head>
 	<body>
 		<!-- pagina principal -->
+	<div data-role="page" id="cliente" data-theme="b">
+		
+	<div data-role="header" data_theme="a">
+		<h1>Victorinox México</h1>
+	</div>
+	<div data-role="content" data-theme="b" style=" top:600 ;alignment-adjust:central; vertical-align:central; text-align:center">
+
+	  <a href="#form1" data-role="button" data-icon="arrow-r" data-theme="c" style="vertical-align:bottom">Cotizacion</a>
+    
+	
+      
+      
+      
+      
+    
+	
+	
+    
+	
+	
+	
+    		
+	</div>
+    
+    
+	<div data-role="footer"  data-theme="b" style="  text-align:center;" data-position="fixed">
+        <a data-role="button" data-theme="b" href="#nosotros" class="ui-btn-left" data-transition="slideup">Nosotros</a>
+        <span style="font-size: 8pt;">Todos los derechos reservados &copy;</span>
+	</div>
+</div>
+		
+		
+		<!-- pagina cotizacion -->
+		
+		
 		<div data-role="page" id="form1" data-theme="b">
 			<div data-role="header" data_theme="a">
 				<h1>Victorinox México</h1>
@@ -116,10 +151,11 @@ font-weight:bold;
 			</div>
 -->
 			
-			<div style="text-align: center;  ">
+			
+			<div data-role="content" data-theme="b" style=" top:600 ;alignment-adjust:central; vertical-align:central; text-align:center">
+				<div style="text-align: center;  ">
 				<label for="textinput" style="text-align: center " data-theme="b">Av. Hermanos Sérdan N° 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. México. 01 (222) 2668330 ext 113 ferias@victorinox.com.mx</label>
 			</div>
-			<div data-role="content" data-theme="b" style=" top:600 ;alignment-adjust:central; vertical-align:central; text-align:center">
 				<div class="abs">
 					<div class="abs2">
 						<TABLE WIDTH=100% HEIGHT=200 id="datos1">
@@ -442,15 +478,9 @@ font-weight:bold;
 			</div>
 			<div data-role="footer" data-position="fixed" data-theme="b"></div>
 		</div>
-		<div id="preparing-file-modal" title="Preparing report..." style="display: none;">
-    We are preparing your report, please wait...
+		
  
-    <div class="ui-progressbar-value ui-corner-left ui-corner-right" style="width: 100%; height:22px; margin-top: 20px;"></div>
-</div>
- 
-<div id="error-modal" title="Error" style="display: none;">
-    There was a problem generating your report, please try again.
-</div>
+
 		<script type="text/javascript" src="js/API/jquery.maskedinput-1.3.1.min_.js"></script>
 		<script type="text/javascript">
 			/*	$('.clave123').live('change', function() { 

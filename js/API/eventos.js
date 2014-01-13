@@ -6,11 +6,14 @@ $(document).ready(function (e) {
 
 	
 	
-		window.location.href = '#form1';
+
 		var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 		var f = new Date();
 		$('#descripcion').val(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
 		//---------------datos 
+		window.location.href = '#cliente';
+		window.location.href = '#form1';
+		window.location.href = '#cliente';
 		$('#datos').tap(function () {
 			var cla = $('#clave').val();
 			obtener_clave(cla);
