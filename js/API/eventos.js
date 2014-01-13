@@ -38,11 +38,12 @@ $(document).ready(function (e) {
 			
 		});
 		
-		$( "#autocomplete" ).on( "filterablebeforefilter", function ( e, data ) {
+		$( "#autocomplete" ).bind( "change", function ( e, data ) {
 				var $ul = $( this ),
 					$input = $( data.input ),
 					value = $input.val(),
 					html = "";
+			alert("value");
 				$ul.html( "" );
 				if ( value && value.length > 2 ) {
 					$ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
@@ -61,7 +62,7 @@ $(document).ready(function (e) {
 						});
 						$ul.html( html );
 						$ul.listview( "refresh" );
-						$ul.trigger( "updatelayout");
+						
 					});
 				}
 			});
