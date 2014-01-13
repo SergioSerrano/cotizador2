@@ -11,13 +11,62 @@ $(document).ready(function (e) {
 		var f = new Date();
 		$('#descripcion').val(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
 		//---------------datos 
-		window.location.href = '#cliente';
+		
 		window.location.href = '#form1';
-		window.location.href = '#cliente';
+		
 		$('#datos').tap(function () {
 			var cla = $('#clave').val();
 			obtener_clave(cla);
 		});
+		
+		
+		$('#prospectos').tap(function () {
+			$('#Comprador').prop('disabled', false);
+			$('#agente').prop('disabled', false);
+			$('#No_cliente').prop('disabled', true);
+			$('#poblacion').prop('disabled', false);
+			$('#condic').prop('disabled', false);
+			$('#razon').prop('disabled', false);
+			$('#estado').prop('disabled', false);
+			$('#tel').prop('disabled', false);
+			$('#calle').prop('disabled', false);
+			$('#cp').prop('disabled', false);
+			$('#fax').prop('disabled', false);
+			$('#colonia').prop('disabled', false);
+			$('#status').prop('disabled', false);
+			$('#mail').prop('disabled', false);
+			
+		});
+		
+		$( "#autocomplete" ).on( "filterablebeforefilter", function ( e, data ) {
+				var $ul = $( this ),
+					$input = $( data.input ),
+					value = $input.val(),
+					html = "";
+				$ul.html( "" );
+				if ( value && value.length > 2 ) {
+					$ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
+					$ul.listview( "refresh" );
+					$.ajax({
+						url: "http://gd.geobytes.com/AutoCompleteCity",
+						dataType: "jsonp",
+						crossDomain: true,
+						data: {
+							q: $input.val()
+						}
+					})
+					.then( function ( response ) {
+						$.each( response, function ( i, val ) {
+							html += "<li>" + val + "</li>";
+						});
+						$ul.html( html );
+						$ul.listview( "refresh" );
+						$ul.trigger( "updatelayout");
+					});
+				}
+			});
+		
+		
 		$('#add_line').tap(function () {
 			var tabla = $('#Claves');
 			var $linea = $('<tr></tr>');

@@ -3,7 +3,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="css/victorinox2.css" rel="stylesheet" type="text/css" />
 		<link href="css/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css" />
-		
 		<script src="phonegap.js"></script>
 		<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
 		<script src="js/jquery.mobile-1.0.min.js" type="text/javascript"></script>
@@ -19,15 +18,10 @@
 		<script src="jspdf.plugin.standard_fonts_metrics.js"></script>
 		<script type="text/javascript" src="js/API/libs/base64.js"></script>
 		<script type="text/javascript" src="js/API/jspdf.plugin.addimage.js"></script>
-		
 		<script type="text/javascript" src="js/API/libs/FileSaver.js/FileSaver.js"></script>
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="//code.jquery.com/mobile/git/jquery.mobile-git.min.js"></script>
 		
-	
-		
-	
-
-    
-
 		<style>
 			div.abs {
 				width: auto;
@@ -101,47 +95,13 @@
 			label {
 				font-size: 90%;
 			}
+		
 			
 		</style>
 	</head>
 	<body>
 		<!-- pagina principal -->
-	<div data-role="page" id="cliente" data-theme="b">
-		
-	<div data-role="header" data_theme="a">
-		<h1>Victorinox México</h1>
-	</div>
-	<div data-role="content" data-theme="b" style=" top:600 ;alignment-adjust:central; vertical-align:central; text-align:center">
-
-	  <a href="#form1" data-role="button" data-icon="arrow-r" data-theme="c" style="vertical-align:bottom">Cotizacion</a>
-    
-	
-      
-      
-      
-      
-    
-	
-	
-    
-	
-	
-	
-    		
-	</div>
-    
-    
-	<div data-role="footer"  data-theme="b" style="  text-align:center;" data-position="fixed">
-        <a data-role="button" data-theme="b" href="#nosotros" class="ui-btn-left" data-transition="slideup">Nosotros</a>
-        <span style="font-size: 8pt;">Todos los derechos reservados &copy;</span>
-	</div>
-</div>
-		
-		
-		<!-- pagina cotizacion -->
-		
-		
-		<div data-role="page" id="form1" data-theme="b">
+		<div data-role="page" id="cotizacion" data-theme="b">
 			<div data-role="header" data_theme="a">
 				<h1>Victorinox México</h1>
 			</div>
@@ -150,12 +110,10 @@
 font-weight:bold; 
 			</div>
 -->
-			
-			
 			<div data-role="content" data-theme="b" style=" top:600 ;alignment-adjust:central; vertical-align:central; text-align:center">
 				<div style="text-align: center;  ">
-				<label for="textinput" style="text-align: center " data-theme="b">Av. Hermanos Sérdan N° 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. México. 01 (222) 2668330 ext 113 ferias@victorinox.com.mx</label>
-			</div>
+					<label for="textinput" style="text-align: center " data-theme="b">Av. Hermanos Sérdan N° 717 Col. Sn Rafael Poniente, CP 72029 Puebla, Pue. México. 01 (222) 2668330 ext 113 ferias@victorinox.com.mx</label>
+				</div>
 				<div class="abs">
 					<div class="abs2">
 						<TABLE WIDTH=100% HEIGHT=200 id="datos1">
@@ -322,14 +280,14 @@ font-weight:bold;
 									<div data-role="fieldcontain" data-theme="c">
 										<table>
 											<tr>
-												
-										<input type="checkbox" name="checkbox1_0" id="checkbox1_0" value="83.0" data-theme="c" />
-												</tr>										
-												<tr>
-										<label>Flete</label>
-													
-												</tr>
-											</table>
+												<TD>
+													<input type="checkbox" name="checkbox1_0" id="checkbox1_0" value="83.0" data-theme="c" />
+												</TD>
+												<TD>
+													<label>Flete</label>
+												</TD>
+											</tr>
+										</table>
 									</div>
 								</TD>
 								<TD width="10%" ALIGN=center class="flete0" style="text-align: right; ">
@@ -455,12 +413,31 @@ font-weight:bold;
 							<br>
 							<a data-theme="c" href="" data-transition="none" id="pdffile">pdf</a>
 						</li>
-					
 					</ul>
 				</div>
 			</div>
 			<div data-role="footer" style="text-align:center;" data-position="fixed" data-theme="b">
 				<img src="css/images/plecaVictorinox.jpg" width="100%" height="20px" alt="Texto Alternativo">
+				<a data-role="button" data-theme="b" href="#nosotros" class="ui-btn-left" data-transition="slideup">Nosotros</a>
+				<span style="font-size: 8pt;">Todos los derechos reservados &copy;</span>
+			</div>
+		</div>
+		<!-- pagina inicio -->
+		<div data-role="page" id="form1" data-theme="b">
+			<div data-role="header" data_theme="a">
+				<h1>Victorinox México</h1>
+			</div>
+			<div data-role="content" class="ui-content" data-theme="b" >
+				<a href="#cotizacion" data-role="button" data-icon="arrow-r" data-theme="c" style="vertical-align:bottom" id="prospectos">Cotizacion para Prospectos</a>
+				
+					
+			
+			<ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Find a city..." data-filter-theme="a"></ul>
+	
+		
+	</div>
+			</div>
+			<div data-role="footer" data-theme="b" style="  text-align:center;" data-position="fixed">
 				<a data-role="button" data-theme="b" href="#nosotros" class="ui-btn-left" data-transition="slideup">Nosotros</a>
 				<span style="font-size: 8pt;">Todos los derechos reservados &copy;</span>
 			</div>
@@ -478,11 +455,12 @@ font-weight:bold;
 			</div>
 			<div data-role="footer" data-position="fixed" data-theme="b"></div>
 		</div>
-		
- 
-
 		<script type="text/javascript" src="js/API/jquery.maskedinput-1.3.1.min_.js"></script>
 		<script type="text/javascript">
+			
+			
+			
+		
 			/*	$('.clave123').live('change', function() { 
 
 			$( this ).parents('tr').children( '.descripcion' ).children('#las').remove();
@@ -522,9 +500,6 @@ font-weight:bold;
 				return this.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
 			};
 		</script>
-		
-
-	
 	</body>
 	<!--pepes17@gmail.com -Sergio Serrano-->
 

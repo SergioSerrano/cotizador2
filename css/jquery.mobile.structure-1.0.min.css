@@ -903,8 +903,8 @@ body.ui-mobile-viewport, div.ui-mobile-viewport {
 	right:15px
 }
 .ui-checkbox input, .ui-radio input {
-	position:absolute;
-	left:20px;
+	position:relative;
+	left:0px;
 	top:50%;
 	width:25px;
 	height:25px;
@@ -1322,7 +1322,7 @@ ol.ui-listview .ui-li-jsnumbering:before {
 	display:block
 }
 .ui-listview-filter-inset {
-	margin:-15px -5px -15px -5px;
+	margin:-5px -5px -40px -5px;
 	background:transparent
 }
 .ui-li.ui-screen-hidden {
