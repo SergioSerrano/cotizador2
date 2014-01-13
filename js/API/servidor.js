@@ -408,9 +408,9 @@ function gotFileWriter(writer)
 	var no_cliente=$('#No_cliente').val();
 	doc.text(5,lineas,no_cliente);
 	var poblacion=$('#poblacion').val();
-	doc.text(120,lineas,poblacion);
+	doc.text(60,lineas,poblacion);
 	var condic=$('#condic').val();
-	doc.text(5,lineas,condic);
+	doc.text(120,lineas,condic);
 	
 	lineas=lineas+5;
 	
@@ -422,9 +422,9 @@ function gotFileWriter(writer)
 	var razon=$('#razon').val();
 	doc.text(5,lineas,razon);
 	var estado=$('#estado').val();
-	doc.text(120,lineas,estado);
+	doc.text(60,lineas,estado);
 	var tel=$('#tel').val();
-	doc.text(5,lineas,tel);
+	doc.text(120,lineas,tel);
 	
 	lineas=lineas+5;
 	doc.text(5,lineas,'Calle');
@@ -436,9 +436,9 @@ function gotFileWriter(writer)
 	var calle=$('#calle').val();
 	doc.text(5,lineas,calle);
 	var cp=$('#cp').val();
-	doc.text(120,lineas,cp);
+	doc.text(60,lineas,cp);
 	var fax=$('#fax').val();
-	doc.text(5,lineas,fax);
+	doc.text(120,lineas,fax);
 	
 	
 	lineas=lineas+5;
@@ -450,9 +450,9 @@ function gotFileWriter(writer)
 	var colonia=$('#colonia').val();
 	doc.text(5,lineas,colonia);
 	var status=$('#status').val();
-	doc.text(120,lineas,status);
+	doc.text(60,lineas,status);
 	var  mail=$('#mail').val();
-	doc.text(5,lineas,mail);
+	doc.text(120,lineas,mail);
 	
 	lineas=lineas+50;
 	
@@ -482,14 +482,14 @@ function gotFileWriter(writer)
 	contador=lineas+50;
 	$.each($('.clprecio'), function(index, value) {
 				valorclave=$(this).text();
-				doc.text(115,contador,valorclave);	
+				doc.text(135,contador,valorclave);	
 					contador = contador + 5;
 				});
 	
 	contador=lineas+50;
 	$.each($('.cl_stotal'), function(index, value) {
 				valorclave=$(this).text();
-				doc.text(135,contador,valorclave);	
+				doc.text(155,contador,valorclave);	
 					contador = contador + 5;
 				});
 	lineas=contador;
@@ -497,7 +497,7 @@ function gotFileWriter(writer)
 	lineas=lineas+5;
 	var tt=$('#tt').text();
 	doc.text(130,lineas,tt);
-	
+	lineas=lineas+5;
 	doc.text(120,lineas,'Descuento');
 	
 	lineas=lineas+5;
