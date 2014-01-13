@@ -383,7 +383,7 @@ function gotFileWriter(writer)
 	
 	
 	doc.setFontSize(12); 
-	doc.text(120,lineas,'VICTORINOX');
+	doc.text(120,lineas,'VICTORINOXU+00E9');
 	lineas=lineas+10;
 	doc.text(60,lineas,'COTIZACION');
 	doc.text(120,lineas,'Puebla Pue, a:  ' + f1.getDate() +  ' de '  + meses1[f1.getMonth()] + ' de ' + f1.getFullYear());
